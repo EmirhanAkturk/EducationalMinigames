@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f875f2e9bda874b97a7c64e9b57da3d3, type: 3}
+  m_Name: GameConfigurations
+  m_EditorClassIdentifier: 
+  IsMoneyHorizontal: 1
+  CollectMoneyAnimDuration: 0.4
+  CollectMoneyXSlotCapacity: 1
+  CollectMoneyZSlotCapacity: 2
+  MoneyDropAnimDuration: 0.7
+  AnimJumpPower: 1.5
+  CostPerMoneyObject: 100
+  MinMoneyCount: 7
+  MaxMoneyCount: 21
+  TileUnlockAnimEase: 6
+  AnimMoveDelayRatio: 20
+  XDimension: 6
+  YDimension: 18
+  ZDimension: 6
+  MoneyAnimCount: 0
+  MoneyStackOnBack: 2
+  WaitBeforePayDelay: 1
+  TileUnlockDuration: 1
+  InteractionObjectUnlockDuration: 1
+  DataProviderType: 0
+  NewItemUnlockedTextHideDelay: 10
+  CustomerPoolTypes: 33000000
+  CustomerSpawnPeriod: 1.5
+  CustomerCountRatio: 210
+  UnlockTiles:
+  - TileId: 20
+    EventName: VanityTableUnlock
+  - TileId: 15
+    EventName: CosmeticProductionUnlock
+  - TileId: 3
+    EventName: T2RayonUnlock
+  - TileId: 8
+    EventName: T2SewingUnlock
+  - TileId: 6
+    EventName: VendingMachineUnlock
+  - TileId: 18
+    EventName: AtmUnlock
+  - TileId: 34
+    EventName: T3RayonUnlock
+  - TileId: 11
+    EventName: T3SewingUnlock
+  CheckTutorial: 0
+  TileVisualOffset: 100
+  EnemyBoosts: []
+  IngameCameraType: 1
+  RequiredRollCount: 1
+  goToTablePercentage: 40
+  GoToVendingMachinePercentage: 40
+  OLMoneyPerPeriodPerManifact: 1
+  OLMaxMoneyPerManifact: 50
+  OLMoneyPeriodMinute: 1
+  HideHealthBars: 0
+  Facebook: 0
+  Elephant: 1
+  GameAnalytics: 0
+  FirebaseAnalytics: 0
+  discordInviteLink: 
+  MoneyPerOneBale: 10
+  maxProductCount: 5
+  oneProductPercentage: 5
+  CollectProductXSlotCapacity: 2
+  CollectProductZSlotCapacity: 3

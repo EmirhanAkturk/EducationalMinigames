@@ -1,0 +1,4 @@
+public enum AudioType
+{
+	BackgroundMusic,
+}
