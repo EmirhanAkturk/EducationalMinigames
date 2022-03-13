@@ -26,7 +26,7 @@ public class SupplyCarryPoint : CarryPoint
 	protected override bool RemoveRepresentationalObject(PoolType objectType, GameObject go)
 	{
 		bool returnValue = base.RemoveRepresentationalObject(objectType, go);
-		if (objectType == PoolType.SupplyBox) ChangeCurrencyAmount(-1);
+		// if (objectType == PoolType.SupplyBox) ChangeCurrencyAmount(-1);
 		if(gameObject.activeInHierarchy) StartCoroutine(CheckArmState());
 		return returnValue;
 	}

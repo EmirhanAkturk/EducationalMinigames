@@ -18,28 +18,28 @@ public class CoroutineDispatcher : MonoBehaviour
 		}
 	}
 
-	public static new void StartCoroutine(IEnumerator coroutine)
+	public new static void StartCoroutine(IEnumerator coroutine)
 	{
 		Context.StartCoroutine(coroutine);
 	}
 	
-	public static void StartCoroutine(Action action, float delay)
-	{
-		Context.StartCoroutine(DoWithDelay(action, delay));
-	}
-
-	private static IEnumerator DoWithDelay(Action action, float delay)
-	{
-		yield return new WaitForSeconds(delay);
-		action?.Invoke();
-	}
-	
-	public static new void StopCoroutine(IEnumerator coroutine)
+	public new static void StopCoroutine(IEnumerator coroutine)
 	{
 		Context.StopCoroutine(coroutine);
 	}
 	public static void ShutDown()
 	{
 		Context.StopAllCoroutines();
+	}
+	
+	public static void ExecuteWithDelay(Action callback, float delay)
+	{
+		StartCoroutine(ExecuteWithDelayCoroutine(callback, delay));
+	}
+	
+	private static IEnumerator ExecuteWithDelayCoroutine(Action callback, float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		callback?.Invoke();
 	}
 }
