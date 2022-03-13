@@ -9,8 +9,8 @@ public class MiniGameCollection : ScriptableObject
     [SerializeField] private List<MiniGame> miniGames;
 
     private Dictionary<MiniGameType, MiniGame> miniGamesDictionary = new Dictionary<MiniGameType, MiniGame>();
-    
-    public Dictionary<MiniGameType, MiniGame> MiniGamesDictionary
+
+    private Dictionary<MiniGameType, MiniGame> MiniGamesDictionary
     {
         get
         {

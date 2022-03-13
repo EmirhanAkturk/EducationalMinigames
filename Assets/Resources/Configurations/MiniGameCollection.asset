@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGames:
   - miniGameType: 1
-    SceneName: BeatSaberCloneScene
+    SceneName: BeatSaberClone

@@ -17,11 +17,11 @@ public class MiniGameManager : Singleton<MiniGameManager>
     {
         if (isLoaded) return;
         MiniGameCollection = Resources.Load<MiniGameCollection>(COLLECTION_PATH);
-        SceneManager.sceneLoaded += sceneChanged;
+        SceneManager.sceneLoaded += SceneChanged;
         LoadData();
     }
 
-    void sceneChanged(Scene sc, LoadSceneMode sm)
+    private void SceneChanged(Scene sc, LoadSceneMode sm)
     {
         MiniGameLoaded?.Invoke(ActiveMiniGameType);
     }

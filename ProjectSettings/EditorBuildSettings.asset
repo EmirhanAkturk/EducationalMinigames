@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/InitScene.unity
     guid: a2ba44019e2a540deb4507337c25a844
   - enabled: 1
-    path: Assets/Scenes/BeatSaberCloneScene.unity
+    path: Assets/Scenes/Minigames/BeatSaberClone.unity
     guid: 874c2d3d6cff71247ad29695f7ea7551
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eb84867302ed045349bae371346a3123, type: 2}
