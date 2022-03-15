@@ -158,7 +158,8 @@ namespace Pathfinding.Util {
 		}
 	}
 
-	/// <summary>Extension methods for List<T></summary>
+	/// <summary>Extension methods for List<T />
+	/// </summary>
 	public static class ListExtensions {
 		/// <summary>
 		/// Identical to ToArray but it uses ArrayPool<T> to avoid allocations if possible.
