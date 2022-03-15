@@ -5,16 +5,18 @@ using System.Linq;
 
 public class PoolingSystem: Singleton<PoolingSystem>
 {
-    private  bool isInitialized = false;
-    private  PoolCollection PoolCollection;
-    private  Dictionary<PoolType, PoolElement> PoolDictionary = new Dictionary<PoolType, PoolElement>();
-    private  Dictionary<PoolType, Queue<GameObject>> Pool = new Dictionary<PoolType, Queue<GameObject>>();
     public List<PoolRep> PoolObjects = new List<PoolRep>();
-
+    
     private const string PoolPath = "Configurations/PoolCollection";
+    
     private static GameObject poolParent;
     
-    public  void InstantiatePool()
+    private PoolCollection PoolCollection;
+    private Dictionary<PoolType, PoolElement> PoolDictionary = new Dictionary<PoolType, PoolElement>();
+    private Dictionary<PoolType, Queue<GameObject>> Pool = new Dictionary<PoolType, Queue<GameObject>>();
+    private bool isInitialized = false;
+
+    private void InstantiatePool()
     {
         PoolCollection = Resources.Load<PoolCollection>(PoolPath);
         poolParent = new GameObject("PoolParent");
@@ -38,13 +40,13 @@ public class PoolingSystem: Singleton<PoolingSystem>
         isInitialized = true;
     }
 
-    public  T Create<T>(PoolType pooltype, Transform parent = null)
+    public T Create<T>(PoolType pooltype, Transform parent = null)
     {
         var go = Create(pooltype, parent);
         return go.GetComponent<T>();
     }
 
-    public  GameObject Create(PoolType pooltype, Transform parent = null)
+    public GameObject Create(PoolType pooltype, Transform parent = null)
     {
         if (!isInitialized)
             InstantiatePool();
@@ -81,7 +83,7 @@ public class PoolingSystem: Singleton<PoolingSystem>
     }
 
 
-    public  void Destroy(PoolType name, GameObject poolObject)
+    public void Destroy(PoolType name, GameObject poolObject)
     {
         if (!isInitialized)
             InstantiatePool();
@@ -104,7 +106,7 @@ public class PoolingSystem: Singleton<PoolingSystem>
         poolObject.SetActive(false);
     }
 
-    private  void AddToPool(PoolType name, GameObject poolObject)
+    private void AddToPool(PoolType name, GameObject poolObject)
     {
         var go = GameObject.Instantiate(poolObject);
         go.SetActive(false);
