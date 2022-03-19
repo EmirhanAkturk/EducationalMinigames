@@ -8,11 +8,12 @@ public enum PoolType
 	MainCharacter = 1,
 
 	//Customer Character Block 51-74
-
+	RedCube = 100,
+	BlueCube = 101,
 	//Staff Characters 75-100
 
 	//Raw Block
-	
+
 
 	//Products
 

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4866211761569496804}
+  - component: {fileID: 4154132756969794934}
   m_Layer: 0
   m_Name: BlueCube
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4154132756969794934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824885263902777145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679e158f2e6a4f7458ea24b939e45ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3687064174572478024
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +56,6 @@ GameObject:
   - component: {fileID: 4231635580266987626}
   - component: {fileID: 7724626901182449461}
   - component: {fileID: 5411846300030608232}
-  - component: {fileID: 5215734018482001562}
   m_Layer: 0
   m_Name: CubeLight
   m_TagString: Untagged
@@ -114,19 +126,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5215734018482001562
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3687064174572478024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4747276546738035319
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +137,6 @@ GameObject:
   - component: {fileID: 2861138287689854249}
   - component: {fileID: 824277388148237609}
   - component: {fileID: 710743750655048291}
-  - component: {fileID: 2654586732480342391}
   m_Layer: 0
   m_Name: CubeModel
   m_TagString: Untagged
@@ -209,16 +207,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2654586732480342391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4747276546738035319}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

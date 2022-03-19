@@ -19,5 +19,14 @@ MonoBehaviour:
     - Type: 1
       Path: MainCharacter
       Count: 0
+  - groupName: Cubes
+    groupPath: PoolObjects/BeatSaber
+    PoolElements:
+    - Type: 100
+      Path: RedCube
+      Count: 0
+    - Type: 101
+      Path: BlueCube
+      Count: 0
   DefaultCount: 0
   ExtendMethod: 0
