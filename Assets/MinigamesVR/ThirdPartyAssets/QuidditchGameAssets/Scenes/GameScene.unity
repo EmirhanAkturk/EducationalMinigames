@@ -462,7 +462,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4294967289
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -4980,10 +4980,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 187209626}
   baseController: {fileID: 915650081}
-  inputActionReference_UISwitcher: {fileID: -7458540540055863071, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  uiCanvasGameobject: {fileID: 1738817402}
-  positionOffsetForUICanvasGameobject: {x: 0, y: 4, z: 10}
-  isUICanvasActive: 0
+  inputActionReferenceUISwitcher: {fileID: -7458540540055863071, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  uiCanvasObject: {fileID: 1738817402}
+  positionOffsetForUICanvasObject: {x: 0, y: 4, z: 10}
 --- !u!1 &1427833404
 GameObject:
   m_ObjectHideFlags: 0
