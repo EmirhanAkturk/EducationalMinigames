@@ -223,6 +223,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "UI Switcher Button",
+                    "type": "Button",
+                    "id": "0fc0bd13-7d94-4c4c-b80a-1c6fc16825e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -608,6 +617,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c1f9a6a-cd39-48be-95f3-3f7345ec8e5a",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Switcher Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
