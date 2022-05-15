@@ -27,6 +27,7 @@ public enum PoolType
 
 	//Other
 	Empty = 1001,
+	CompositorLayerLoadingScreen = 1002,
 
 	//Cosmetics
 

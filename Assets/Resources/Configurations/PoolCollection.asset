@@ -28,5 +28,11 @@ MonoBehaviour:
     - Type: 101
       Path: BlueCube
       Count: 0
+  - groupName: Others
+    groupPath: PoolObjects/Others
+    PoolElements:
+    - Type: 1002
+      Path: CompositorLayerLoadingScreen
+      Count: 0
   DefaultCount: 0
   ExtendMethod: 0

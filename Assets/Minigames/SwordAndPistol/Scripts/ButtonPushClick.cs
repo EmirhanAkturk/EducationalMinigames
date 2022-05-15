@@ -82,7 +82,7 @@ namespace Minigames.SwordAndPistol.Scripts
 
             }
             
-            MiniGameManager.Instance.LoadMiniGame(MiniGameType.SwordAndPistol);
+            StartCoroutine(MiniGameManager.Instance.LoadMiniGameAsync(MiniGameType.SwordAndPistol));
             //Load Scene
         }
 
