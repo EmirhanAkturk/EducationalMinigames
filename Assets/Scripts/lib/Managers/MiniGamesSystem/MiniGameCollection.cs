@@ -41,5 +41,6 @@ public class MiniGameCollection : ScriptableObject
 public class MiniGame
 {
     public MiniGameType miniGameType;
+    [Tooltip("Part after Assets/Minigames ")] public string SceneFolderPath;
     public string SceneName;
 }

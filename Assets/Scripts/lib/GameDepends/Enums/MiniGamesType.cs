@@ -1,5 +1,5 @@
 public enum MiniGameType
 {
-    Undefıned = 0,
-    BeatSaberClone = 1,
+    UNDEFINED = 0,
+    SwordAndPistol = 1,
 }

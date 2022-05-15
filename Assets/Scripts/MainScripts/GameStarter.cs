@@ -8,6 +8,6 @@ public class GameStarter : MonoBehaviour
 {
     private void Start()
     {
-        MiniGameManager.Instance.LoadMiniGame(MiniGameType.BeatSaberClone);
+        MiniGameManager.Instance.LoadMiniGame(MiniGameType.SwordAndPistol);
     }
 }

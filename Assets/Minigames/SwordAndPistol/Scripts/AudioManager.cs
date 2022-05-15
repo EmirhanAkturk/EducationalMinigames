@@ -1,28 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-public class AudioManager : MonoBehaviour
+
+namespace Minigames.SwordAndPistol.Scripts
 {
-
-    public AudioSource sliceSound;
-    public AudioSource gunSound;
-    public AudioSource musicTheme;
-    public AudioSource buttonClickSound;
-
-
-    public static AudioManager instance;
-
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        if (instance != null && instance != this)
+
+        public AudioSource sliceSound;
+        public AudioSource gunSound;
+        public AudioSource musicTheme;
+        public AudioSource buttonClickSound;
+
+
+        public static AudioManager instance;
+
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            return;
+            if (instance != null && instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+            instance = this;
         }
 
-        instance = this;
-    }
-
    
+    }
 }

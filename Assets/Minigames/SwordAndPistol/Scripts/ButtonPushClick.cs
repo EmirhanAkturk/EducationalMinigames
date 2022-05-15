@@ -81,6 +81,8 @@ namespace Minigames.SwordAndPistol.Scripts
                 timeText.text = countDownValue.ToString();
 
             }
+            
+            MiniGameManager.Instance.LoadMiniGame(MiniGameType.SwordAndPistol);
             //Load Scene
         }
 

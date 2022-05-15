@@ -34,14 +34,6 @@ public class MiniGameManager : Singleton<MiniGameManager>
         {
             levelData = new Dictionary<StateType, int>();
         }
-        // if (levelData.ContainsKey(StateType.Level))
-        // {
-        //     MaxLevel = LevelCollection.LevelsDictionary[levelData[StateType.Level]];
-        // }
-        // else
-        // {
-        //     MaxLevel = LevelCollection.GetLevelByOrder(0);
-        // }
 
         if (levelData.ContainsKey(StateType.ActiveLevel))
         {
@@ -49,7 +41,7 @@ public class MiniGameManager : Singleton<MiniGameManager>
         }
         else
         {
-            ActiveMiniGameType = MiniGameType.BeatSaberClone;
+            ActiveMiniGameType = MiniGameType.SwordAndPistol;
         }
 
         // Debug.Log("Level Loaded Active: " + ActiveLevelId + " max: " + MaxLevel.LevelId);

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Minigames/SwordAndPistol/Scenes/LobbyScene.unity
     guid: c31e1de002b648041bbe01d575ea9f9b
   - enabled: 1
-    path: Assets/Minigames/SwordAndPistol/Scenes/GameScene.unity
+    path: Assets/Minigames/SwordAndPistol/Scenes/SwordAndPistolScene.unity
     guid: 8b0418fd49eb1d24fa8f70f9bf0642dd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d4753eaff936a844d81e21e5658e30f1, type: 2}
