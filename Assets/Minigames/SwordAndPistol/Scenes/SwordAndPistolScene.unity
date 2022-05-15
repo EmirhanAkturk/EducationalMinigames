@@ -731,14 +731,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 529705809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9fb2c1d3c84c4c890d4231c296364, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 0
-  highScore: 0
-  hightScoreText: {fileID: 1721821175}
-  currentScoreText: {fileID: 448433545}
-  finalScoreText: {fileID: 1409727138}
 --- !u!4 &529705811
 Transform:
   m_ObjectHideFlags: 0
@@ -985,7 +980,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583533794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be4ac4fae0e08b84199b3eac8cdbf42f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fd8dd308dbb8864dac51eabdba3bd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &628099177
@@ -1281,7 +1276,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1005023590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0973561d47a73fb48be2ada9183fcb3a, type: 3}
+  m_Script: {fileID: 11500000, guid: dde890bc37a653142bcdad19bdf041d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Spawnpoints:
@@ -1698,7 +1693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301489294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ef5b6d1b47bc5468a87f77d9341bbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 88948a3da0d654c4895514be67d3b44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1846573721}
@@ -2147,7 +2142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442044314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b539a71ab2b12444485b265e1f6e6589, type: 3}
+  m_Script: {fileID: 11500000, guid: ba59ea89dd9ce054ab3fdef412c46e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sliceSound: {fileID: 3819278}
