@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HTCViveControllerProfile Standalone
   m_EditorClassIdentifier: 
   m_enabled: 1
+  <failedInitialization>k__BackingField: 0
   nameUi: HTC Vive Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.htcvive
@@ -20,6 +21,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &-7134059456731842857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,6 +35,7 @@ MonoBehaviour:
   m_Name: MockDriver Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Driver
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.mockdriver
@@ -53,6 +56,7 @@ MonoBehaviour:
   m_Name: MicrosoftHandInteraction Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Microsoft Hand Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.handtracking
@@ -60,6 +64,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &-5757352930750296802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +78,7 @@ MonoBehaviour:
   m_Name: KHRSimpleControllerProfile Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Khronos Simple Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
@@ -80,6 +86,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &-4867164937809245328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +100,7 @@ MonoBehaviour:
   m_Name: ConformanceAutomationFeature Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Conformance Automation
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.conformance
@@ -113,6 +121,7 @@ MonoBehaviour:
   m_Name: RuntimeDebuggerOpenXRFeature Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Runtime Debugger
   version: 1
   featureIdInternal: com.unity.openxr.features.runtimedebugger
@@ -135,6 +144,7 @@ MonoBehaviour:
   m_Name: OculusTouchControllerProfile Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -142,6 +152,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &-2131481153726147014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +166,7 @@ MonoBehaviour:
   m_Name: RuntimeDebuggerOpenXRFeature Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Runtime Debugger
   version: 1
   featureIdInternal: com.unity.openxr.features.runtimedebugger
@@ -177,6 +189,7 @@ MonoBehaviour:
   m_Name: OculusQuestFeature Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Oculus Quest Support
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.oculusquest
@@ -197,6 +210,7 @@ MonoBehaviour:
   m_Name: ConformanceAutomationFeature Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Conformance Automation
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.conformance
@@ -247,6 +261,7 @@ MonoBehaviour:
   - {fileID: 8296035354670430937}
   m_renderMode: 0
   m_depthSubmissionMode: 0
+  lastPlayVersion: 
 --- !u!114 &1722423060593717956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +275,7 @@ MonoBehaviour:
   m_Name: OculusTouchControllerProfile Standalone
   m_EditorClassIdentifier: 
   m_enabled: 1
+  <failedInitialization>k__BackingField: 0
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -267,6 +283,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &2753789940245695675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +297,7 @@ MonoBehaviour:
   m_Name: MicrosoftMotionControllerProfile Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Microsoft Motion Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.microsoftmotioncontroller
@@ -287,6 +305,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &4335515796245857142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +321,7 @@ MonoBehaviour:
   features: []
   m_renderMode: 1
   m_depthSubmissionMode: 0
+  lastPlayVersion: 
 --- !u!114 &4914851518704656994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +335,7 @@ MonoBehaviour:
   m_Name: EyeGazeInteraction Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Eye Gaze Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.eyetracking
@@ -322,6 +343,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &5067450013463144412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +357,7 @@ MonoBehaviour:
   m_Name: MicrosoftHandInteraction Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Microsoft Hand Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.handtracking
@@ -342,6 +365,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &5082050395469398712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +379,7 @@ MonoBehaviour:
   m_Name: EyeGazeInteraction Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Eye Gaze Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.eyetracking
@@ -362,6 +387,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &5334558063051258675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +401,7 @@ MonoBehaviour:
   m_Name: KHRSimpleControllerProfile Android
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Khronos Simple Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
@@ -382,6 +409,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
 --- !u!114 &5507293048178723824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +423,7 @@ MonoBehaviour:
   m_Name: MockRuntime Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Runtime
   version: 0.0.2
   featureIdInternal: com.unity.openxr.feature.mockruntime
@@ -403,6 +432,7 @@ MonoBehaviour:
   priority: 0
   required: 0
   ignoreValidationErrors: 0
+  <XrSessionState>k__BackingField: 0
 --- !u!114 &5917138182421583399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +455,7 @@ MonoBehaviour:
   - {fileID: -2131481153726147014}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+  lastPlayVersion: 
 --- !u!114 &8296035354670430937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +469,7 @@ MonoBehaviour:
   m_Name: ValveIndexControllerProfile Standalone
   m_EditorClassIdentifier: 
   m_enabled: 1
+  <failedInitialization>k__BackingField: 0
   nameUi: Valve Index Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.valveindex
@@ -445,3 +477,4 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+  m_AllowAddActionMap: 0
