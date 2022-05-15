@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Oculus/VR/Scenes/HandTest.unity
-    guid: b9a31e08066d6e343a208d34ec298f09
+    path: Assets/Minigames/SwordAndPistol/Scenes/LobbyScene.unity
+    guid: c31e1de002b648041bbe01d575ea9f9b
+  - enabled: 1
+    path: Assets/Minigames/SwordAndPistol/Scenes/GameScene.unity
+    guid: 8b0418fd49eb1d24fa8f70f9bf0642dd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d4753eaff936a844d81e21e5658e30f1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d7e19f3b7af29ef44890d1634b393011, type: 2}
