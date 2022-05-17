@@ -179,7 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b71e187bf87f3f4d83b1c1a99313311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4780613126747401452, guid: 5fe6ddd978f98334db23e9de98e4766c, type: 3}
+  shootingButton: 2097152
+  handController: 2
+  bulletType: 901
   nozzleTransform: {fileID: 8158423210920815036}
   gunAnimator: {fileID: 8158423210558530573}
   fireRate: 0.1

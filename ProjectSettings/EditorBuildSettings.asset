@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Minigames/SwordAndPistol/Scenes/LobbyScene.unity
     guid: c31e1de002b648041bbe01d575ea9f9b
   - enabled: 1

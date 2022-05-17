@@ -1013,6 +1013,11 @@ Transform:
   m_Father: {fileID: 1005023592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &636829762 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8158423210945799095, guid: 99930b2561abfaa4cae77974a386e703, type: 3}
+  m_PrefabInstance: {fileID: 663666904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &663666904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2283,7 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliceSound: {fileID: 3819278}
-  gunSound: {fileID: 0}
+  gunSound: {fileID: 636829762}
   musicTheme: {fileID: 1908826275}
   buttonClickSound: {fileID: 0}
 --- !u!4 &1442044316

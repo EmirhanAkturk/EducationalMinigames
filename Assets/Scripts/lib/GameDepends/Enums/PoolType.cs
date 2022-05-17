@@ -24,6 +24,7 @@ public enum PoolType
 	//3DUI
 
 	//Props
+	Bullet = 901,
 
 	//Other
 	Empty = 1001,

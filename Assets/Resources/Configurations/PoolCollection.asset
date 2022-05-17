@@ -34,5 +34,11 @@ MonoBehaviour:
     - Type: 1002
       Path: CompositorLayerLoadingScreen
       Count: 0
+  - groupName: SwordAndPistol
+    groupPath: PoolObjects/SwordAndPistol
+    PoolElements:
+    - Type: 901
+      Path: Bullet
+      Count: 0
   DefaultCount: 0
   ExtendMethod: 0
