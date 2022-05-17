@@ -88,6 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -112,6 +113,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3099127920940236361
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,18 +176,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3099127920940236361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78915f78aec24cf40a52e072b7183a77, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b71e187bf87f3f4d83b1c1a99313311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.1
-  bulletPrefab: {fileID: 4780613126747401452, guid: 5fe6ddd978f98334db23e9de98e4766c,
-    type: 3}
+  bulletPrefab: {fileID: 4780613126747401452, guid: 5fe6ddd978f98334db23e9de98e4766c, type: 3}
   nozzleTransform: {fileID: 8158423210920815036}
-  sound_shoot: {fileID: 0}
-  sound_reload: {fileID: 0}
-  ShootingButton: 8192
-  slicerObject: {fileID: 0}
   gunAnimator: {fileID: 8158423210558530573}
+  fireRate: 0.1
 --- !u!1 &5837732878101611401
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +238,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -266,6 +264,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7744791433035032364
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +320,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -345,6 +345,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8158423210920815037
 GameObject:
   m_ObjectHideFlags: 0
