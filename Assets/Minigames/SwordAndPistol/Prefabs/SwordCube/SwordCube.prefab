@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2658914618188550336}
   - component: {fileID: 7185695676711228939}
   - component: {fileID: 1830747692}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: SwordCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

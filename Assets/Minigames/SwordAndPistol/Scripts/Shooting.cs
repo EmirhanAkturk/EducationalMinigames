@@ -17,6 +17,9 @@ namespace Minigames.SwordAndPistol.Scripts
         private static readonly int Fire = Animator.StringToHash("Fire");
         private float elapsedTime;
 
+        private Collider SlicerCollider => slicerCollider ??= FindObjectOfType<Slicer>().GetComponent<Collider>();
+        private Collider slicerCollider;
+
         // Update is called once per frame
         private void Update()
         {
@@ -33,6 +36,7 @@ namespace Minigames.SwordAndPistol.Scripts
             }
         }
 
+        
         private void Shoot()
         {
             //Play sound
@@ -47,6 +51,8 @@ namespace Minigames.SwordAndPistol.Scripts
             bullet.transform.position = nozzleTransform.position;
             bullet.transform.rotation = Quaternion.Euler(0, 0, 0);
             bullet.StartMovement(nozzleTransform.forward);
+            
+            Physics.IgnoreCollision(bullet.GetComponent<Collider>(), SlicerCollider);
         }
     }
 }
