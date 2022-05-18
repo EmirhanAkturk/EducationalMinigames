@@ -1,62 +1,70 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using EzySlice;
 using UnityEngine;
-using EzySlice;
-public class Slicer : MonoBehaviour
+
+namespace Minigames.SwordAndPistol.Scripts
 {
-    public Material MaterialAfterSlice;
-    public LayerMask sliceMask;
-
-    public bool isTouched;
-
-    private void Update()
-    {     
-        if (isTouched == true)
-        {
-            isTouched = false;
-            Collider[] objectsToBeSliced = Physics.OverlapBox(transform.position, new Vector3(1, 0.1f, 0.1f), transform.rotation, sliceMask);
-            foreach (Collider objectToBeSliced in objectsToBeSliced)
-            {
-              
-                SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, MaterialAfterSlice);
-
-                GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, MaterialAfterSlice);
-                GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, MaterialAfterSlice);
-
-             
-                upperHullGameobject.transform.position = objectToBeSliced.transform.position;
-                lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
-               
-
-                MakeItPhysical(upperHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
-                MakeItPhysical(lowerHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
-
-                Destroy(objectToBeSliced.gameObject);
-            }
-        }
-
-    }
-    private void MakeItPhysical(GameObject obj, Vector3 _velocity)
+    public class Slicer : MonoBehaviour
     {
-        obj.AddComponent<MeshCollider>().convex = true;
-        obj.AddComponent<Rigidbody>();
-        obj.GetComponent<Rigidbody>().velocity = -_velocity;
+        public Material MaterialAfterSlice;
+        public LayerMask sliceMask;
 
-        int randomNumberX = Random.Range(0,2);
-        int randomNumberY = Random.Range(0, 2);
-        int randomNumberZ = Random.Range(0, 2);
+        public bool isTouched;
 
-        obj.GetComponent<Rigidbody>().AddForce(3*new Vector3(randomNumberX,randomNumberY,randomNumberZ),ForceMode.Impulse);       
-        obj.AddComponent<DestroyAfterSeconds>();
+        [Header("Vibration")]
+        [SerializeField] private OVRInput.Controller controller = OVRInput.Controller.LTouch;
+        [SerializeField] private float duration = .4f;
+        [SerializeField] private float frequency = 1f;
+        [SerializeField] private float amplitude = .3f;
+        
+        private void Update()
+        {     
+            if (isTouched == true)
+            {
+                isTouched = false;
+                Collider[] objectsToBeSliced = Physics.OverlapBox(transform.position, new Vector3(1, 0.1f, 0.1f), transform.rotation, sliceMask);
+                foreach (Collider objectToBeSliced in objectsToBeSliced)
+                {
+                    SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, MaterialAfterSlice);
 
-    }
+                    GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, MaterialAfterSlice);
+                    GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, MaterialAfterSlice);
+
+                    // Starts vibration
+                    VibrationManager.Instance.VibrateController(duration, frequency, amplitude, controller);
+             
+                    upperHullGameobject.transform.position = objectToBeSliced.transform.position;
+                    lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
+               
+                    MakeItPhysical(upperHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
+                    MakeItPhysical(lowerHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
+
+                    Destroy(objectToBeSliced.gameObject);
+                }
+            }
+
+        }
+        private void MakeItPhysical(GameObject obj, Vector3 _velocity)
+        {
+            obj.AddComponent<MeshCollider>().convex = true;
+            obj.AddComponent<Rigidbody>();
+            obj.GetComponent<Rigidbody>().velocity = -_velocity;
+
+            int randomNumberX = Random.Range(0,2);
+            int randomNumberY = Random.Range(0, 2);
+            int randomNumberZ = Random.Range(0, 2);
+
+            obj.GetComponent<Rigidbody>().AddForce(3*new Vector3(randomNumberX,randomNumberY,randomNumberZ),ForceMode.Impulse);       
+            obj.AddComponent<DestroyAfterSeconds>();
+
+        }
 
    
 
-    private SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
-    {
-        // slice the provided object using the transforms of this object
-        return obj.Slice(transform.position, transform.up, crossSectionMaterial);
-    }
+        private SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
+        {
+            // slice the provided object using the transforms of this object
+            return obj.Slice(transform.position, transform.up, crossSectionMaterial);
+        }
 
+    }
 }

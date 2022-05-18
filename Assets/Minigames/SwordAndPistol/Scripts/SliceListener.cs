@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Minigames.SwordAndPistol.Scripts;
 using UnityEngine;
 
 public class SliceListener : MonoBehaviour

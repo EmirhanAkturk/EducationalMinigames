@@ -4,9 +4,17 @@ namespace Minigames.SwordAndPistol.Scripts
 {
     public class CubeExplode : MonoBehaviour
     {
-
-        public GameObject shatteredObject;
-        public GameObject mainCube;
+        
+        [SerializeField] private GameObject shatteredObject;
+        [SerializeField] private GameObject mainCube;
+        
+        [Header("Vibration")]
+        [SerializeField] private OVRInput.Controller controller = OVRInput.Controller.RTouch;
+        [SerializeField] private float duration = .4f;
+        [SerializeField] private float frequency = 1f;
+        [SerializeField] private float amplitude = .3f;
+        
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -18,15 +26,17 @@ namespace Minigames.SwordAndPistol.Scripts
         {
             Destroy(mainCube);
             shatteredObject.SetActive(true);
-            var shatterAnimation = shatteredObject.GetComponent<Animation>().Play();
-
-
+            var shatterAnimation = shatteredObject.GetComponent<Animation>();
+            shatterAnimation.Play();
+            
+            VibrationManager.Instance.VibrateController(duration, frequency, amplitude, controller);
+            
             Destroy(shatteredObject,1);
         }
 
-        void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Bullet")
+            if (other.CompareTag("Bullet"))
             {
                 IsShot();
             }

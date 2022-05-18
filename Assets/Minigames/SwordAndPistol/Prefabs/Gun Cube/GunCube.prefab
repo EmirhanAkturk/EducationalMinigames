@@ -131,6 +131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shatteredObject: {fileID: 4031010848909296124}
   mainCube: {fileID: 516068829924499889}
+  controller: 2
+  duration: 0.4
+  frequency: 1
+  amplitude: 0.3
 --- !u!114 &3915731880260618787
 MonoBehaviour:
   m_ObjectHideFlags: 0
