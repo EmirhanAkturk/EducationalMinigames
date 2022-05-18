@@ -762,9 +762,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 529705809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 1b8d22193f07db947bbee85a3a97966e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScore: 0
+  highScore: 0
+  hightScoreText: {fileID: 1721821175}
+  currentScoreText: {fileID: 448433545}
+  finalScoreText: {fileID: 1409727138}
 --- !u!4 &529705811
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,6 +2082,8 @@ MonoBehaviour:
   progressBarImage: {fileID: 1259635496}
   timerUI_Gameobject: {fileID: 1240951553}
   cubeSpawnManager: {fileID: 1005023590}
+  currentScoreUI: {fileID: 75154934}
+  finalScoreUI: {fileID: 546668396}
 --- !u!1 &1303733962
 GameObject:
   m_ObjectHideFlags: 0

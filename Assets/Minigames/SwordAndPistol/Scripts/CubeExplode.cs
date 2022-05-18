@@ -29,7 +29,11 @@ namespace Minigames.SwordAndPistol.Scripts
             var shatterAnimation = shatteredObject.GetComponent<Animation>();
             shatterAnimation.Play();
             
+            // Vibrate the Controller
             VibrationManager.Instance.VibrateController(duration, frequency, amplitude, controller);
+            
+            //Add score
+            ScoreManager.Instance.AddScore(ScorePoints.GUNCUBE_SCOREPOINT);
             
             Destroy(shatteredObject,1);
         }

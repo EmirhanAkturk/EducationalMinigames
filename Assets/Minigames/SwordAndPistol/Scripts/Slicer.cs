@@ -32,6 +32,9 @@ namespace Minigames.SwordAndPistol.Scripts
                     // Starts vibration
                     VibrationManager.Instance.VibrateController(duration, frequency, amplitude, controller);
              
+                    //Add score
+                    ScoreManager.Instance.AddScore(ScorePoints.SWORDCUBE_SCOREPOINT);
+
                     upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                     lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
                

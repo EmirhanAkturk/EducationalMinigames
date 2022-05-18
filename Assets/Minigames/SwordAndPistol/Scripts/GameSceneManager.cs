@@ -8,20 +8,26 @@ namespace Minigames.SwordAndPistol.Scripts
     public class GameSceneManager : MonoBehaviour
     {
         [Header("UI")]
-        public TextMeshProUGUI timeText;
-        public Image progressBarImage;
-        public GameObject timerUI_Gameobject;
+        [SerializeField] private TextMeshProUGUI timeText;
+        [SerializeField] private Image progressBarImage;
+        [SerializeField] private GameObject timerUI_Gameobject;
 
         [Header("Managers")]
-        public GameObject cubeSpawnManager;
+        [SerializeField] private GameObject cubeSpawnManager;
 
+        [Header("UI Panels")]
+        [SerializeField] private GameObject currentScoreUI;
+        [SerializeField] private GameObject finalScoreUI;
+
+        private OVRCameraRig OvrCameraRig => ovrCameraRig ??= FindObjectOfType<OVRCameraRig>();
+        private OVRCameraRig ovrCameraRig;
+        
         //Audio related
-        float audioClipLength;
+        private float audioClipLength;
         private float timeToStartGame = 5.0f;
 
-
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             //Getting the duration of the song
             audioClipLength = AudioManager.instance.musicTheme.clip.length;
@@ -33,11 +39,10 @@ namespace Minigames.SwordAndPistol.Scripts
             //Resetting progress bar
             progressBarImage.fillAmount = Mathf.Clamp(0, 0, 1);
 
-
+            SetGameUIState(false);
         }
 
-
-        public IEnumerator StartCountdown(float countdownValue)
+        private IEnumerator StartCountdown(float countdownValue)
         {
             while (countdownValue > 0)
             {
@@ -52,26 +57,31 @@ namespace Minigames.SwordAndPistol.Scripts
             GameOver();
         }
 
-
-        public void GameOver()
+        private void GameOver()
         {
-            Debug.Log("Game Over");
             timeText.text = ConvertToMinAndSeconds(0);
-
-            //Disable cube spawning
-            cubeSpawnManager.SetActive(false);
-
-            //Disable timer UI
-            timerUI_Gameobject.SetActive(false);
+            SetGameUIState(true);
         }
 
+        private void SetGameUIState(bool isGameOver)
+        {
+            cubeSpawnManager.SetActive(!isGameOver);
+            timerUI_Gameobject.SetActive(!isGameOver);
+            currentScoreUI.SetActive(!isGameOver);
+
+            finalScoreUI.SetActive(isGameOver);
+
+            if (isGameOver)
+            {
+                finalScoreUI.transform.rotation = Quaternion.Euler(Vector3.zero);
+                finalScoreUI.transform.position = OvrCameraRig.transform.position + new Vector3(0, 2f, 4f);
+            }
+        }
 
         private string ConvertToMinAndSeconds(float totalTimeInSeconds)
         {
             string timeText = Mathf.Floor(totalTimeInSeconds / 60).ToString("00") + ":" + Mathf.FloorToInt(totalTimeInSeconds % 60).ToString("00");
             return timeText;
         }
-
-  
     }
 }
