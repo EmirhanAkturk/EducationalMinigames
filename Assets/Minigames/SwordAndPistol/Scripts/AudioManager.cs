@@ -1,29 +1,93 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Minigames.SwordAndPistol.Scripts
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : Singleton<AudioManager>
     {
+        [SerializeField] private AudioSource buttonClickSound;
+        [SerializeField] private AudioSource musicTheme;
+        [SerializeField] private AudioSource sliceSound;
+        [SerializeField] private AudioSource gunSound;
 
-        public AudioSource sliceSound;
-        public AudioSource gunSound;
-        public AudioSource musicTheme;
-        public AudioSource buttonClickSound;
-
-
-        public static AudioManager instance;
+        private Dictionary<AudioType, AudioSource> audiosDictionary;
 
         private void Awake()
         {
-            if (instance != null && instance != this)
+            audiosDictionary = new Dictionary<AudioType, AudioSource>()
             {
-                Destroy(this.gameObject);
+                {AudioType.ButtonClickSound, buttonClickSound},
+                {AudioType.MusicTheme, musicTheme},
+                {AudioType.SliceSound, sliceSound},
+                {AudioType.GunSound, gunSound},
+            };
+        }
+
+        private void OnDisable()
+        {
+            StopAllAudios();
+        }
+
+        public AudioSource GetAudioSource(AudioType audioType)
+        {
+            if (!audiosDictionary.ContainsKey(audioType))
+            {
+                Debug.Log($"{audioType} not in the dictionary!!");
+                return null;
+            }
+
+            return audiosDictionary[audioType];
+        }   
+        
+        
+        public void PlaySound(AudioType audioType, Vector3? pos = null)
+        {
+            if (!audiosDictionary.ContainsKey(audioType))
+            {
+                Debug.Log($"{audioType} not in the dictionary!!");
                 return;
             }
 
-            instance = this;
+            var audioSource = audiosDictionary[audioType];
+
+            if (pos != null)
+            {
+                audioSource.transform.position = pos.Value;
+            } 
+            
+            audioSource.Play();
         }
 
-   
+        public void StopAllAudios()
+        {
+            foreach (var audioSourceType in audiosDictionary.Keys)
+            {
+                StopAudio(audioSourceType);
+            }
+        }
+        
+        public void StopAudio(AudioType audioType)
+        {
+            if (!audiosDictionary.ContainsKey(audioType))
+            {
+                Debug.Log($"{audioType} not in the dictionary!!");
+                return;
+            }
+
+            var audioSource = audiosDictionary[audioType];
+
+            audioSource.Stop();
+        }
+        
+    }
+
+    public enum AudioType
+    {
+        ButtonClickSound = 0,
+        MusicTheme = 1,
+        SliceSound = 2,
+        GunSound = 3,
     }
 }
+

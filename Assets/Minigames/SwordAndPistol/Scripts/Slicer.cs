@@ -5,10 +5,10 @@ namespace Minigames.SwordAndPistol.Scripts
 {
     public class Slicer : MonoBehaviour
     {
-        public Material MaterialAfterSlice;
-        public LayerMask sliceMask;
-
-        public bool isTouched;
+        public bool IsTouched { get; set; }
+        
+        [SerializeField] private Material materialAfterSlice;
+        [SerializeField] private LayerMask sliceMask;
 
         [Header("Vibration")]
         [SerializeField] private OVRInput.Controller controller = OVRInput.Controller.LTouch;
@@ -18,17 +18,20 @@ namespace Minigames.SwordAndPistol.Scripts
         
         private void Update()
         {     
-            if (isTouched == true)
+            if (IsTouched)
             {
-                isTouched = false;
+                IsTouched = false;
                 Collider[] objectsToBeSliced = Physics.OverlapBox(transform.position, new Vector3(1, 0.1f, 0.1f), transform.rotation, sliceMask);
                 foreach (Collider objectToBeSliced in objectsToBeSliced)
                 {
-                    SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, MaterialAfterSlice);
+                    SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, materialAfterSlice);
 
-                    GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, MaterialAfterSlice);
-                    GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, MaterialAfterSlice);
+                    GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, materialAfterSlice);
+                    GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, materialAfterSlice);
 
+                    //Play slice sound
+                    AudioManager.Instance.PlaySound(AudioType.SliceSound, objectToBeSliced.transform.position);
+                    
                     // Starts vibration
                     VibrationManager.Instance.VibrateController(duration, frequency, amplitude, controller);
              

@@ -30,7 +30,7 @@ namespace Minigames.SwordAndPistol.Scripts
         private void Start()
         {
             //Getting the duration of the song
-            audioClipLength = AudioManager.instance.musicTheme.clip.length;
+            audioClipLength = AudioManager.Instance.GetAudioSource(AudioType.MusicTheme).clip.length;
             Debug.Log(audioClipLength);
 
             //Starting the countdown with song
@@ -51,7 +51,7 @@ namespace Minigames.SwordAndPistol.Scripts
 
                 timeText.text = ConvertToMinAndSeconds(countdownValue);
 
-                progressBarImage.fillAmount = (AudioManager.instance.musicTheme.time / audioClipLength);
+                progressBarImage.fillAmount = (AudioManager.Instance.GetAudioSource(AudioType.MusicTheme).time / audioClipLength);
 
             }
             GameOver();

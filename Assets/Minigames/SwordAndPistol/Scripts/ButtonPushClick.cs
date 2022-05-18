@@ -59,8 +59,7 @@ namespace Minigames.SwordAndPistol.Scripts
             GetComponent<Collider>().isTrigger = true;
 
             ////Playing Sound
-            AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
-            AudioManager.instance.buttonClickSound.Play();
+            AudioManager.Instance.PlaySound(AudioType.ButtonClickSound, transform.position);
 
             //Start the game
             StartCoroutine(StartGame(3));
@@ -91,8 +90,7 @@ namespace Minigames.SwordAndPistol.Scripts
             if (isClicked)
             {
                 ////Playing Sound
-                AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
-                AudioManager.instance.buttonClickSound.Play();
+                AudioManager.Instance.PlaySound(AudioType.ButtonClickSound, transform.position);
             }
         }
 

@@ -40,8 +40,7 @@ namespace Minigames.SwordAndPistol.Scripts
         private void Shoot()
         {
             //Play sound
-            AudioManager.instance.gunSound.gameObject.transform.position = nozzleTransform.position;
-            AudioManager.instance.gunSound.Play();
+            AudioManager.Instance.PlaySound(AudioType.GunSound, nozzleTransform.position);
 
             //Play animation
             gunAnimator.SetTrigger(Fire);
