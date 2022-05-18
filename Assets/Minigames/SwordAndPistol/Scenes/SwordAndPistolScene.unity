@@ -1519,11 +1519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5bedc71e158584088193668ff17876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialAfterSlice: {fileID: 2100000, guid: fe639409707168a4c997613678ae8475, type: 2}
+  materialAfterSlice: {fileID: 2100000, guid: fe639409707168a4c997613678ae8475, type: 2}
   sliceMask:
     serializedVersion: 2
     m_Bits: 64
-  isTouched: 0
   controller: 1
   duration: 0.4
   frequency: 1
@@ -2538,10 +2537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba59ea89dd9ce054ab3fdef412c46e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonClickSound: {fileID: 0}
+  musicTheme: {fileID: 1908826275}
   sliceSound: {fileID: 3819278}
   gunSound: {fileID: 636829762}
-  musicTheme: {fileID: 1908826275}
-  buttonClickSound: {fileID: 0}
 --- !u!4 &1442044316
 Transform:
   m_ObjectHideFlags: 0
