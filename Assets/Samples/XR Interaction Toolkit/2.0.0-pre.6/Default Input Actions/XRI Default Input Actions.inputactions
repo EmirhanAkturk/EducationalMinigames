@@ -207,27 +207,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "9c923b8a-6b4f-48e4-a8ba-4a98ede736a4",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Trigger",
-                    "type": "Value",
-                    "id": "6cd399be-26c2-484e-864a-9e45c357c69b",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UI Switcher Button",
+                    "name": "Switch UI",
                     "type": "Button",
-                    "id": "0fc0bd13-7d94-4c4c-b80a-1c6fc16825e1",
+                    "id": "59db8440-efa2-4115-9170-77259e269b4c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -600,34 +582,12 @@
                 },
                 {
                     "name": "",
-                    "id": "1ee3cfa2-ac98-4598-81aa-d16d77b9ae87",
-                    "path": "<XRController>{LeftHand}/grip",
+                    "id": "4f678b73-00e3-4264-8620-d779b0fb334b",
+                    "path": "<XRSimulatedController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Grip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "086a7ebc-4052-4d3b-8555-2f24cfdd09a6",
-                    "path": "<XRController>{LeftHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Trigger",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c1f9a6a-cd39-48be-95f3-3f7345ec8e5a",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UI Switcher Button",
+                    "action": "Switch UI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -786,24 +746,6 @@
                     "type": "Value",
                     "id": "6f7cf253-7062-443b-b10f-2be48a33f027",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "3709e6c8-6eb7-4cb5-9cbf-07579075aa96",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Trigger",
-                    "type": "Value",
-                    "id": "9c1df589-c11e-4a17-88f8-d0a681a0020f",
-                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1159,28 +1101,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Press Value",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "17c3fa79-3535-4959-80e0-aace0f3a45c2",
-                    "path": "<XRController>{RightHand}/grip",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "da4d93fb-585b-4a42-91fe-0b1fe762d228",
-                    "path": "<XRController>{RightHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

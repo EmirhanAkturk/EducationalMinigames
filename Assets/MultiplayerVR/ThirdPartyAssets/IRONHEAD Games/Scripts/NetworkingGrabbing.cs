@@ -1,0 +1,97 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+
+public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
+{
+    PhotonView m_photonView;
+    Rigidbody rb;
+    bool isBeingHeld = false;
+    private void Awake()
+    {
+        m_photonView = GetComponent<PhotonView>();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isBeingHeld)
+        {
+            //Object is being grabbed
+            rb.isKinematic = true;
+        }
+        else
+        {
+            //Object is not being grabbed
+            rb.isKinematic = false;
+        }
+    }
+
+    private void TransferOwnerShip()
+    {
+        m_photonView.RequestOwnership();
+    }
+
+    public void OnSelectEntered()
+    {
+        Debug.Log("Grabbed");
+        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
+
+        if(m_photonView.Owner == PhotonNetwork.LocalPlayer)
+        {
+            Debug.Log("We do not request the ownership. Already mine.");
+        }
+        else
+        {
+            TransferOwnerShip();
+        }
+    }
+
+    public void OnSelectExited()
+    {
+        Debug.Log("Released");
+        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
+    }
+
+    public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
+    {
+        if(targetView != m_photonView)
+        {
+            return;
+        }
+
+        Debug.Log("Ownership Requested for: " + targetView.name + " from " + requestingPlayer.NickName);
+        m_photonView.TransferOwnership(requestingPlayer);
+    }
+
+    public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
+    {
+        Debug.Log("OnOwnership transfered to " + targetView.name + " from " + previousOwner.NickName);
+    }
+
+    public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
+    {
+
+    }
+
+    [PunRPC]
+    public void StartNetworkGrabbing()
+    {
+        isBeingHeld = true;
+        gameObject.layer = 12;
+    }
+
+    [PunRPC]
+    public void StopNetworkGrabbing()
+    {
+        isBeingHeld = false;
+        gameObject.layer = 11;
+    }
+}
