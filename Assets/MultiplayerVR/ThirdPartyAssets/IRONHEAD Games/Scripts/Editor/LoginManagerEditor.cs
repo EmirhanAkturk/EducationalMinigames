@@ -10,5 +10,11 @@ public class LoginManagerEditor : Editor
     {
         DrawDefaultInspector();
         EditorGUILayout.HelpBox("This script is responsible for connecting to Photon Servers.", MessageType.Info);
+
+        LoginManager loginManager = (LoginManager)target;
+        if(GUILayout.Button("Connect Anonymously"))
+        {
+            loginManager.ConnectAnonymously();
+        }
     }
 }

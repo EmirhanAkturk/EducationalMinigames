@@ -38,7 +38,7 @@ public class UI_InteractionController : MonoBehaviour
         //Deactivating UI Canvas Gameobject by default
         if (UICanvasGameobject !=null)
         {
-            UICanvasGameobject.SetActive(false);
+            //UICanvasGameobject.SetActive(false);
 
         }
 
@@ -68,7 +68,7 @@ public class UI_InteractionController : MonoBehaviour
           
 
             //Activating the UI Canvas Gameobject
-            UICanvasGameobject.SetActive(true);
+            //UICanvasGameobject.SetActive(true);
         }
         else
         {
@@ -82,7 +82,7 @@ public class UI_InteractionController : MonoBehaviour
             BaseController.GetComponent<XRDirectInteractor>().enabled = true;
 
             //De-Activating the UI Canvas Gameobject
-            UICanvasGameobject.SetActive(false);
+            //UICanvasGameobject.SetActive(false);
         }
 
     }
