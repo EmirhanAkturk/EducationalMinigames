@@ -228,7 +228,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3703
+    m_Bits: 7799
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1852,6 +1852,7 @@ GameObject:
   - component: {fileID: 134290992715231777}
   - component: {fileID: 7713742767660517436}
   - component: {fileID: 8187113300389991954}
+  - component: {fileID: 686900714446808009}
   m_Layer: 0
   m_Name: Generic VR Player
   m_TagString: Untagged
@@ -1892,8 +1893,9 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 686900714446808009}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1912,6 +1914,24 @@ MonoBehaviour:
   LocalXRRigGameobject: {fileID: 134290992493799380}
   AvatarHeadGameobject: {fileID: 134290992214229173}
   AvatarBodyGameobject: {fileID: 134290991642380591}
+--- !u!114 &686900714446808009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134290992715231778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eaf111a876d68349a683d772430afb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalVRPlayerTransform: {fileID: 134290992715231777}
+  mainAvatarTransform: {fileID: 134290993590862360}
+  headTransform: {fileID: 134290992214229172}
+  bodyTransform: {fileID: 134290991642380590}
+  leftHandTransform: {fileID: 134290991970457221}
+  rightHandTransform: {fileID: 134290992752851733}
 --- !u!1 &134290992752851734
 GameObject:
   m_ObjectHideFlags: 0
