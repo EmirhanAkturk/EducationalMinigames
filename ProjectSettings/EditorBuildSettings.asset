@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/SwordAndPistol/Scenes/SwordAndPistolScene.unity
     guid: 8b0418fd49eb1d24fa8f70f9bf0642dd
+  - enabled: 1
+    path: Assets/MultiplayerVR/ThirdPartyAssets/IRONHEAD Games/Scenes/LoginScene.unity
+    guid: b3049d4882a276f4dbae81c84962e9ed
+  - enabled: 1
+    path: Assets/MultiplayerVR/ThirdPartyAssets/IRONHEAD Games/Scenes/HomeScene.unity
+    guid: 66249e54836b48a42acadcc57da3e448
+  - enabled: 1
+    path: Assets/MultiplayerVR/ThirdPartyAssets/IRONHEAD Games/Scenes/World_School.unity
+    guid: b72244336204212439510723e69fa9f9
+  - enabled: 1
+    path: Assets/MultiplayerVR/ThirdPartyAssets/IRONHEAD Games/Scenes/World_Outdoor.unity
+    guid: 5041d70b592f91c4c8b6824c2ef6484f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d4753eaff936a844d81e21e5658e30f1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d7e19f3b7af29ef44890d1634b393011, type: 2}
