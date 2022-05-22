@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
+/projectSettingsUpdater.xml
 /contentModel.xml
 /modules.xml
-/projectSettingsUpdater.xml
 /.idea.EducationalMinigames.iml

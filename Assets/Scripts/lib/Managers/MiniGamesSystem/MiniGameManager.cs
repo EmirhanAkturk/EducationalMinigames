@@ -34,14 +34,6 @@ public class MiniGameManager : Singleton<MiniGameManager>
         {
             levelData = new Dictionary<StateType, int>();
         }
-        // if (levelData.ContainsKey(StateType.Level))
-        // {
-        //     MaxLevel = LevelCollection.LevelsDictionary[levelData[StateType.Level]];
-        // }
-        // else
-        // {
-        //     MaxLevel = LevelCollection.GetLevelByOrder(0);
-        // }
 
         if (levelData.ContainsKey(StateType.ActiveLevel))
         {
@@ -49,7 +41,7 @@ public class MiniGameManager : Singleton<MiniGameManager>
         }
         else
         {
-            ActiveMiniGameType = MiniGameType.BeatSaberClone;
+            ActiveMiniGameType = MiniGameType.SwordAndPistol;
         }
 
         // Debug.Log("Level Loaded Active: " + ActiveLevelId + " max: " + MaxLevel.LevelId);
@@ -69,16 +61,38 @@ public class MiniGameManager : Singleton<MiniGameManager>
     {
         Load();
         ActiveMiniGameType = miniGameType;
-
-        // if(MaxLevel.Order < LevelCollection.LevelsDictionary[ActiveLevelId].Order)
-        // {
-        //     LevelUp();
-        // }
         BeforeMiniGameLoad?.Invoke(miniGameType);
         SceneManager.LoadScene(GetMiniGameByType(ActiveMiniGameType).SceneName);
         // PanelManager.Instance.Show(PopupType.SwitchScenePanel, new PanelData());
+        // Show scene overlay object
         SaveData();
+    }    
+    
+    public IEnumerator LoadMiniGameAsync(MiniGameType miniGameType, float waitBeforeLoad = 3f)
+    {
+        Load();
+        ActiveMiniGameType = miniGameType;
+        BeforeMiniGameLoad?.Invoke(miniGameType);
+
+        var compositorLayerLoadingScreen = PoolingSystem.Instance.Create(PoolType.CompositorLayerLoadingScreen);
+
+        yield return new WaitForSeconds(waitBeforeLoad);
+       
+        var asyncLoad = SceneManager.LoadSceneAsync(GetMiniGameByType(ActiveMiniGameType).SceneName);
+        
+        PoolingSystem.Instance.Destroy(PoolType.CompositorLayerLoadingScreen, compositorLayerLoadingScreen);
+
+        SaveData();
+
+        // while (!asyncLoad.isDone)
+        // {
+        //     yield return null;
+        // }
+        //
+        //
+        // yield return null;
     }
+    
 
     // public bool LevelUp()
     // {

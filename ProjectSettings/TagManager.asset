@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
+  - Bullet
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -12,13 +13,13 @@ TagManager:
   - 
   - Water
   - UI
-  - PostProcessing
-  - LocalAvatarHead
-  - LocalAvatarBody
-  - Teleport
-  - Interactable
-  - Player
-  - InHand
+  - Sliceable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
