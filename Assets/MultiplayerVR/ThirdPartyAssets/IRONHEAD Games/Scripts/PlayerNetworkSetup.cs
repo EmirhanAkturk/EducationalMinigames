@@ -17,8 +17,8 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             //The player is local
             LocalXRRigGameobject.SetActive(true);
 
-            SetLayerRecursively(AvatarHeadGameobject, 7);
-            SetLayerRecursively(AvatarBodyGameobject, 8);
+            SetLayerRecursively(AvatarHeadGameobject, 10);
+            SetLayerRecursively(AvatarBodyGameobject, 11);
 
             TeleportationArea[] teleportationAreas = FindObjectsOfType<TeleportationArea>();
             if(teleportationAreas.Length > 0)

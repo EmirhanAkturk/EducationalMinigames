@@ -84,6 +84,7 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     [PunRPC]
     public void StartNetworkGrabbing()
     {
+        //InHand Layer
         isBeingHeld = true;
         gameObject.layer = 12;
     }
@@ -91,7 +92,8 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     [PunRPC]
     public void StopNetworkGrabbing()
     {
+        //Interactable layer
         isBeingHeld = false;
-        gameObject.layer = 11;
+        gameObject.layer = 8;
     }
 }

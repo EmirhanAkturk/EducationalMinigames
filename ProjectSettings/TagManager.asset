@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Sword
+  - Floor
+  - BackButton
   layers:
   - Default
   - TransparentFX
@@ -14,12 +16,12 @@ TagManager:
   - Water
   - UI
   - Sliceable
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Interactable
+  - Teleport
+  - LocalAvatarHead
+  - LocalAvatarBody
+  - InHand
   - 
   - 
   - 

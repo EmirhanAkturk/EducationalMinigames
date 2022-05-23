@@ -175,8 +175,7 @@ GameObject:
   - component: {fileID: 134290991988606152}
   - component: {fileID: 134290991988606153}
   - component: {fileID: 134290991988606154}
-  - component: {fileID: 134290991988606155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -321,38 +320,6 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_HasMigratedActions: 1
---- !u!114 &134290991988606155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134290991988606005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &134290992111192688
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134290992111192695}
   - component: {fileID: 134290992111192694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Hand Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +507,7 @@ GameObject:
   - component: {fileID: 134290992493799401}
   - component: {fileID: 134290992493799402}
   - component: {fileID: 7249791541988497825}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +708,7 @@ GameObject:
   - component: {fileID: 134290992598340053}
   - component: {fileID: 134290992598340054}
   - component: {fileID: 134290992598340055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHand Teleport Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1305,7 @@ GameObject:
   - component: {fileID: 134290992669262504}
   - component: {fileID: 134290992669262505}
   - component: {fileID: 134290992669262506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHand UI Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2025,7 +1992,7 @@ GameObject:
   - component: {fileID: 134290992923139371}
   - component: {fileID: 134290992923139348}
   - component: {fileID: 134290992923139349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHand Base Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134290993144216859}
   - component: {fileID: 134290993144216858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Hand Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2445,7 +2412,7 @@ GameObject:
   - component: {fileID: 134290993257174003}
   - component: {fileID: 134290993257174012}
   - component: {fileID: 134290993257174013}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHand Base Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2732,7 +2699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 134290993305691594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2800,7 +2767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6807140630608441632}
   - component: {fileID: 4213694719213771882}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Player UI Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2841,9 +2808,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 134290992493799403}
     m_Modifications:
+    - target: {fileID: 927786792967488965, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 930434388971793385, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 930434389981890381, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
       propertyPath: m_Name
       value: Local Player UI Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 930434389981890381, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 930434389981890416, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
       propertyPath: m_Pivot.x
@@ -2952,6 +2931,14 @@ PrefabInstance:
     - target: {fileID: 4081238475469125322, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719700711245612525, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002054792109618994, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd67e3190ded5c4480ce7a5f858cd6f, type: 3}
