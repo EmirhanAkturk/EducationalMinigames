@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Minigames.SwordAndPistol.Scripts
+namespace Minigames.SwordAndPistol.Scripts.Managers
 {
     public class CubeSpawnManager : Singleton<CubeSpawnManager>
     {
@@ -32,12 +31,16 @@ namespace Minigames.SwordAndPistol.Scripts
 
         private IEnumerator CreateCubes()
         {
-            while (CanSpawnCube)
+            while (true)
             {
-                index = Random.Range(0, 4);
-                indexcube = Random.Range(0, 2);
-                GameObject cube = Instantiate(Cubeprefabs[indexcube], Spawnpoints[index].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-                cube.transform.SetParent(transform);
+                if (CanSpawnCube)
+                {
+                    index = Random.Range(0, 4);
+                    indexcube = Random.Range(0, 2);
+                    GameObject cube = Instantiate(Cubeprefabs[indexcube], Spawnpoints[index].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                    cube.transform.SetParent(transform);
+                }
+
                 yield return new WaitForSeconds(timeRate);
             }
         }
