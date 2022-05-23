@@ -35,19 +35,21 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         public void ShowPanel(Vector3 targetPos)
         {
+            SetPanelState(true);
             gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
             gameObject.transform.position = targetPos;
         }
 
-        
-        private void OnEnable()
+        public override void OnEnable()
         {
+            base.OnEnable();
             restartButton.onClick.AddListener(OnRestartGame);
             returnLobbyButton.onClick.AddListener(OnBackToLobby);
         }
-        
-        private void OnDisable()
+
+        public override void OnDisable()
         {
+            base.OnDisable();
             restartButton.onClick.RemoveListener(OnRestartGame);
             returnLobbyButton.onClick.RemoveListener(OnBackToLobby);
         }

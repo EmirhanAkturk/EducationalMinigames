@@ -2,6 +2,7 @@ using System;
 using Photon.Pun.Demo.PunBasics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
@@ -10,7 +11,7 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
     {
         
         [Header("Buttons")] 
-        [SerializeField] private Button restartButton; 
+        [SerializeField] private Button startButton; 
         [SerializeField] private Button returnLobbyButton; 
         
         public void SetPanelState(bool isShow)
@@ -20,47 +21,31 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         public void ShowPanel(Vector3 targetPos)
         {
-            gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
-            gameObject.transform.position = targetPos;
+            SetPanelState(true);
+            transform.rotation = Quaternion.Euler(Vector3.zero);
+            transform.position = targetPos;
         }
 
-        
         private void OnEnable()
         {
-            restartButton.onClick.AddListener(OnRestartGame);
+            startButton.onClick.AddListener(OnStartGame);
             returnLobbyButton.onClick.AddListener(OnBackToLobby);
         }
         
         private void OnDisable()
         {
-            restartButton.onClick.RemoveListener(OnRestartGame);
+            startButton.onClick.RemoveListener(OnStartGame);
             returnLobbyButton.onClick.RemoveListener(OnBackToLobby);
         }
 
-        private void OnRestartGame()
+        private void OnStartGame()
         {
-            MiniGameManager.Instance.RestartMiniGame();
+            EventService.OnGameStart.Invoke(MiniGameManager.Instance.ActiveMiniGameType);
         }
 
         private void OnBackToLobby()
         {
             
         }
-
-        // public void OnButton1Clicked()
-        // {
-        //     simpleUIText.text = "Button1 is clicked";
-        // }
-        //
-        // public void OnButton2Clicked()
-        // {
-        //     simpleUIText.text = "Button2 is clicked";
-        // }
-        //
-        //
-        // public void OnButton3Clicked()
-        // {
-        //     simpleUIText.text = "Button3 is clicked";
-        // }
     }
 }

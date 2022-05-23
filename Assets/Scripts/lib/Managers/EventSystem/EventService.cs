@@ -5,6 +5,6 @@ using UnityEngine.Events;
 
 public static class EventService 
 {
-    public static UnityEvent OnMoneyUpdate = new UnityEvent();
-
+    public static readonly UnityEvent OnMoneyUpdate = new UnityEvent();
+    public static readonly UnityEvent<MiniGameType> OnGameStart = new UnityEvent<MiniGameType>();
 }

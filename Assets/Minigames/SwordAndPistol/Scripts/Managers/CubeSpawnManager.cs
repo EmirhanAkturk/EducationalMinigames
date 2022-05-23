@@ -1,26 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Minigames.SwordAndPistol.Scripts
 {
-    public class CubeSpawnManager : MonoBehaviour
+    public class CubeSpawnManager : Singleton<CubeSpawnManager>
     {
-        public GameObject[] Spawnpoints;
-        public GameObject[] Cubeprefabs;
+        [SerializeField] private GameObject[] Spawnpoints;
+        [SerializeField] private GameObject[] Cubeprefabs;
+        [SerializeField] private float timeRate;
+        
         private int index;
         private int indexcube;
+        public bool CanSpawnCube { private get; set; } = false;
 
-        public float timeRate;
+        // private void OnEnable()
+        // {
+        //     EventService.OnGameStart.AddListener(StartSpawnCube);
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     EventService.OnGameStart.RemoveListener(StartSpawnCube);
+        // }
 
-        void Start()
+        private void Start()
         {
             StartCoroutine(CreateCubes());
         }
 
-
         private IEnumerator CreateCubes()
         {
-            while (true)
+            while (CanSpawnCube)
             {
                 index = Random.Range(0, 4);
                 indexcube = Random.Range(0, 2);

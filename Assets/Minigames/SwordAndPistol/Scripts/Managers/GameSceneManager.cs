@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Minigames.SwordAndPistol.Scripts
+namespace Minigames.SwordAndPistol.Scripts.Managers
 {
     public class GameSceneManager : MonoBehaviour
     {
@@ -14,39 +14,44 @@ namespace Minigames.SwordAndPistol.Scripts
         [SerializeField] private Image progressBarImage;
         [SerializeField] private GameObject timerUI_Gameobject;
 
-        [Header("Managers")]
-        [SerializeField] private GameObject cubeSpawnManager;
+        // [Header("Managers")]
+        // [SerializeField] private GameObject cubeSpawnManager;
 
         [Header("UI Panels")]
         [SerializeField] private GameObject currentScoreUI;
         
-        private StartGamePanel StartGamePanel => startGamePanel ??= FindObjectOfType<StartGamePanel>();
+        private StartGamePanel StartGamePanel => startGamePanel ??= FindObjectOfType<StartGamePanel>(false);
         private StartGamePanel startGamePanel;
 
-        private EndGamePanel EndGamePanel => endGamePanel ??= FindObjectOfType<EndGamePanel>();
+        private EndGamePanel EndGamePanel => endGamePanel ??= FindObjectOfType<EndGamePanel>(false);
         private EndGamePanel endGamePanel;
 
-        private OVRCameraRig OvrCameraRig => ovrCameraRig ??= FindObjectOfType<OVRCameraRig>();
+        private OVRCameraRig OvrCameraRig => ovrCameraRig ??= FindObjectOfType<OVRCameraRig>(false);
         private OVRCameraRig ovrCameraRig;
         
         //Audio related
         private float audioClipLength;
         private float timeToStartGame = 5.0f;
 
-        // private void Awake()
-        // {
-        //     SetGameUIState(false);
-        //     StartGamePanel.ShowPanel(GetPanelTargetPos());
-        // }
-
-        private void Start()
+        private void OnEnable()
         {
-            StartGame();
+            HideAllPanels();
+            StartGamePanel.ShowPanel(GetPanelTargetPos());
+            EventService.OnGameStart.AddListener(StartGame);
+        }
+      
+        private void OnDisable()
+        {
+            EventService.OnGameStart.RemoveListener(StartGame);
         }
 
         // Start is called before the first frame update
-        private void StartGame()
+        private void StartGame(MiniGameType miniGameType)
         {
+            if(miniGameType != MiniGameType.SwordAndPistol) return;
+            
+            StartGamePanel.SetPanelState(false);
+
             //Getting the duration of the song
             audioClipLength = AudioManager.Instance.GetAudioSource(AudioType.MusicTheme).clip.length;
             Debug.Log(audioClipLength);
@@ -98,7 +103,8 @@ namespace Minigames.SwordAndPistol.Scripts
         //
         private void SetGameUIState(bool isGameOver)
         {
-            cubeSpawnManager.SetActive(!isGameOver);
+            CubeSpawnManager.Instance.CanSpawnCube = !isGameOver;
+            // cubeSpawnManager.SetActive(!isGameOver);
             timerUI_Gameobject.SetActive(!isGameOver);
             currentScoreUI.SetActive(!isGameOver);
 
@@ -108,7 +114,6 @@ namespace Minigames.SwordAndPistol.Scripts
             {
                 EndGamePanel.ShowPanel(GetPanelTargetPos());
             }
-        
         }
 
         private string ConvertToMinAndSeconds(float totalTimeInSeconds)
@@ -119,8 +124,15 @@ namespace Minigames.SwordAndPistol.Scripts
 
         private Vector3 GetPanelTargetPos()
         {
-            var targetPos = OvrCameraRig.transform.position + new Vector3(0, 2f, 4f);
-            return targetPos;
+            return OvrCameraRig.transform.position + new Vector3(0, 2f, 4f);
+        }
+        
+        private void HideAllPanels()
+        {
+            StartGamePanel.SetPanelState(false);
+            EndGamePanel.SetPanelState(false);
+            timerUI_Gameobject.gameObject.SetActive(false);
+            currentScoreUI.gameObject.SetActive(false);
         }
     }
 }
