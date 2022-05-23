@@ -77,7 +77,10 @@ namespace Minigames.SwordAndPistol.Scripts
 
             var audioSource = audiosDictionary[audioType];
 
-            audioSource.Stop();
+            if (audioSource != null)
+            {
+                audioSource.Stop();
+            }
         }
         
     }

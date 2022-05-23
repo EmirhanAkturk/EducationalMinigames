@@ -74,13 +74,13 @@ public class MiniGameManager : Singleton<MiniGameManager>
         ActiveMiniGameType = miniGameType;
         BeforeMiniGameLoad?.Invoke(miniGameType);
 
-        var compositorLayerLoadingScreen = PoolingSystem.Instance.Create(PoolType.CompositorLayerLoadingScreen);
+        // var compositorLayerLoadingScreen = PoolingSystem.Instance.Create(PoolType.CompositorLayerLoadingScreen);
 
         yield return new WaitForSeconds(waitBeforeLoad);
        
         var asyncLoad = SceneManager.LoadSceneAsync(GetMiniGameByType(ActiveMiniGameType).SceneName);
         
-        PoolingSystem.Instance.Destroy(PoolType.CompositorLayerLoadingScreen, compositorLayerLoadingScreen);
+        // PoolingSystem.Instance.Destroy(PoolType.CompositorLayerLoadingScreen, compositorLayerLoadingScreen);
 
         SaveData();
 

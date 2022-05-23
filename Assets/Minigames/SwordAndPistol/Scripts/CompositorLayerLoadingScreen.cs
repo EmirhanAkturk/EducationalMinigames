@@ -1,4 +1,5 @@
 using System;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 namespace Minigames.SwordAndPistol.Scripts
@@ -8,20 +9,35 @@ namespace Minigames.SwordAndPistol.Scripts
         [SerializeField] private OVROverlay overlayBackground;
         [SerializeField] private OVROverlay overlayText;
 
-        private OVRCameraRig OVRCameraRig
+        // private OVRCameraRig OVRCameraRig
+        // {
+        //     get
+        //     {
+        //         if (ovrCameraRig == null || ovrCameraRig.Equals(null))
+        //         {
+        //             ovrCameraRig = FindObjectOfType<OVRCameraRig>();
+        //         }
+        //
+        //         return ovrCameraRig;
+        //     }
+        // }
+        //
+        // private OVRCameraRig ovrCameraRig;       
+        //
+        private XROrigin OVRCameraRig
         {
             get
             {
                 if (ovrCameraRig == null || ovrCameraRig.Equals(null))
                 {
-                    ovrCameraRig = FindObjectOfType<OVRCameraRig>();
+                    ovrCameraRig = FindObjectOfType<XROrigin>();
                 }
 
                 return ovrCameraRig;
             }
         }
         
-        private OVRCameraRig ovrCameraRig;
+        private XROrigin ovrCameraRig;
         
         private void Awake()
         {
@@ -43,9 +59,9 @@ namespace Minigames.SwordAndPistol.Scripts
 
         private void ShowOVROverlay()
         {
-            var centerEyeAnchorPos = OVRCameraRig.centerEyeAnchor.position;
+            var centerEyeAnchorPos = OVRCameraRig.transform.position;
 
-            overlayText.transform.position = centerEyeAnchorPos + Vector3.forward * 3f;
+            overlayText.transform.position = centerEyeAnchorPos + Vector3.forward * 3f + Vector3.up;
             
             overlayBackground.enabled = true;
             overlayText.enabled = true;
