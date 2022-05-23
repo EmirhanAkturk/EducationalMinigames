@@ -2928,6 +2928,22 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1778812788}
+    - target: {fileID: 1312928931, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312928931, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1312928930}
+    - target: {fileID: 1312928931, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+      propertyPath: m_Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 1312928930}
+    - target: {fileID: 1312928931, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2908198576419855284, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
       propertyPath: m_Name
       value: Cup
@@ -2986,6 +3002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+--- !u!135 &1312928930 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 3109631380473908607, guid: b787c76c5e9f27d49b0358e843b9edb8, type: 3}
+  m_PrefabInstance: {fileID: 1312928929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1352787677
 GameObject:
   m_ObjectHideFlags: 0

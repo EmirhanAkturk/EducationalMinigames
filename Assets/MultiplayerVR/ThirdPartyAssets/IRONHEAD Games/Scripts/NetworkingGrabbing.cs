@@ -94,6 +94,6 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     {
         //Interactable layer
         isBeingHeld = false;
-        gameObject.layer = 8;
+        gameObject.layer = 0;
     }
 }
