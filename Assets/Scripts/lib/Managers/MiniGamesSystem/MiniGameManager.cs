@@ -68,7 +68,7 @@ public class MiniGameManager : Singleton<MiniGameManager>
         SaveData();
     }    
     
-    public IEnumerator LoadMiniGameAsync(MiniGameType miniGameType, float waitBeforeLoad = 3f)
+    public IEnumerator LoadMiniGameAsync(MiniGameType miniGameType, float waitBeforeLoad = 1f)
     {
         Load();
         ActiveMiniGameType = miniGameType;
