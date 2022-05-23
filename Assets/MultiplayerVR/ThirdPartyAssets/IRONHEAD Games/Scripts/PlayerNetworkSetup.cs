@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
+
 public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject LocalXRRigGameobject;
+    [SerializeField] private GameObject MainAvatarGameobject;
 
     [SerializeField] private GameObject AvatarHeadGameobject;
     [SerializeField] private GameObject AvatarBodyGameobject;
 
     [SerializeField] private GameObject[] AvatarModelPrefabs;
+
+
+    [SerializeField] private TextMeshProUGUI PlayerName_Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
                     item.teleportationProvider = LocalXRRigGameobject.GetComponent<TeleportationProvider>();
                 }
             }
+            MainAvatarGameobject.AddComponent<AudioListener>();
         }
         else
         {
@@ -47,6 +54,11 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
 
             SetLayerRecursively(AvatarHeadGameobject, 0);
             SetLayerRecursively(AvatarBodyGameobject, 0);
+        }
+
+        if(PlayerName_Text != null)
+        {
+            PlayerName_Text.text = photonView.Owner.NickName;
         }
     }
 
