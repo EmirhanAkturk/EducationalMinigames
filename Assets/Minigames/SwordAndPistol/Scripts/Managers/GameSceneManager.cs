@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +19,12 @@ namespace Minigames.SwordAndPistol.Scripts
 
         [Header("UI Panels")]
         [SerializeField] private GameObject currentScoreUI;
-        [SerializeField] private GameObject finalScoreUI;
+        
+        private StartGamePanel StartGamePanel => startGamePanel ??= FindObjectOfType<StartGamePanel>();
+        private StartGamePanel startGamePanel;
+
+        private EndGamePanel EndGamePanel => endGamePanel ??= FindObjectOfType<EndGamePanel>();
+        private EndGamePanel endGamePanel;
 
         private OVRCameraRig OvrCameraRig => ovrCameraRig ??= FindObjectOfType<OVRCameraRig>();
         private OVRCameraRig ovrCameraRig;
@@ -26,8 +33,19 @@ namespace Minigames.SwordAndPistol.Scripts
         private float audioClipLength;
         private float timeToStartGame = 5.0f;
 
-        // Start is called before the first frame update
+        // private void Awake()
+        // {
+        //     SetGameUIState(false);
+        //     StartGamePanel.ShowPanel(GetPanelTargetPos());
+        // }
+
         private void Start()
+        {
+            StartGame();
+        }
+
+        // Start is called before the first frame update
+        private void StartGame()
         {
             //Getting the duration of the song
             audioClipLength = AudioManager.Instance.GetAudioSource(AudioType.MusicTheme).clip.length;
@@ -63,25 +81,46 @@ namespace Minigames.SwordAndPistol.Scripts
             SetGameUIState(true);
         }
 
+        // private void SetGameUIState(bool isGameOver)
+        // {
+        //     cubeSpawnManager.SetActive(!isGameOver);
+        //     timerUI_Gameobject.SetActive(!isGameOver);
+        //     currentScoreUI.SetActive(!isGameOver);
+        //
+        //     EndGamePanel.SetPanelState(isGameOver);
+        //
+        //     if (isGameOver)
+        //     {
+        //         EndGamePanel.ShowPanel(GetPanelTargetPos());
+        //     }
+        //
+        // }
+        //
         private void SetGameUIState(bool isGameOver)
         {
             cubeSpawnManager.SetActive(!isGameOver);
             timerUI_Gameobject.SetActive(!isGameOver);
             currentScoreUI.SetActive(!isGameOver);
 
-            finalScoreUI.SetActive(isGameOver);
+            EndGamePanel.SetPanelState(isGameOver);
 
             if (isGameOver)
             {
-                finalScoreUI.transform.rotation = Quaternion.Euler(Vector3.zero);
-                finalScoreUI.transform.position = OvrCameraRig.transform.position + new Vector3(0, 2f, 4f);
+                EndGamePanel.ShowPanel(GetPanelTargetPos());
             }
+        
         }
 
         private string ConvertToMinAndSeconds(float totalTimeInSeconds)
         {
             string timeText = Mathf.Floor(totalTimeInSeconds / 60).ToString("00") + ":" + Mathf.FloorToInt(totalTimeInSeconds % 60).ToString("00");
             return timeText;
+        }
+
+        private Vector3 GetPanelTargetPos()
+        {
+            var targetPos = OvrCameraRig.transform.position + new Vector3(0, 2f, 4f);
+            return targetPos;
         }
     }
 }

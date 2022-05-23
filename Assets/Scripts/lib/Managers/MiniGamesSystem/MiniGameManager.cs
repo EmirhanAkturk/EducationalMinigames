@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -66,6 +67,16 @@ public class MiniGameManager : Singleton<MiniGameManager>
         // PanelManager.Instance.Show(PopupType.SwitchScenePanel, new PanelData());
         // Show scene overlay object
         SaveData();
+    }        
+    
+    public void RestartMiniGame()
+    {
+        Load();
+        BeforeMiniGameLoad?.Invoke(ActiveMiniGameType);
+        SceneManager.LoadScene(GetMiniGameByType(ActiveMiniGameType).SceneName);
+        // PanelManager.Instance.Show(PopupType.SwitchScenePanel, new PanelData());
+        // Show scene overlay object
+        SaveData();
     }    
     
     public IEnumerator LoadMiniGameAsync(MiniGameType miniGameType, float waitBeforeLoad = 1f)
@@ -111,6 +122,13 @@ public class MiniGameManager : Singleton<MiniGameManager>
     //     MaxLevel = LevelCollection.GetLevelByOrder(0);
     // }
 
+    
+    public void LoadHomeScene()
+    {
+        var sceneName = GetMiniGameByType(MiniGameType.HomeScene).SceneName;
+        PhotonNetwork.LoadLevel(sceneName);
+    }
+    
     private MiniGame GetMiniGameByType(MiniGameType miniGameType)
     {
         return MiniGameCollection.GetMiniGameByType(miniGameType);

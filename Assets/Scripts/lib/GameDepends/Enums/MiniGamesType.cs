@@ -1,5 +1,6 @@
 public enum MiniGameType
 {
-    UNDEFINED = 0,
+    UNDEFINED = 999,
+    HomeScene = 0,
     SwordAndPistol = 1,
 }
