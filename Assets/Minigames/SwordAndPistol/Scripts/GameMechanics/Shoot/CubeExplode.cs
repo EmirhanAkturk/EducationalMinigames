@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Minigames.SwordAndPistol.Scripts
 {
@@ -13,7 +14,8 @@ namespace Minigames.SwordAndPistol.Scripts
         [SerializeField] private float duration = .4f;
         [SerializeField] private float frequency = 1f;
         [SerializeField] private float amplitude = .3f;
-        
+
+        private bool isExplode;
         
         // Start is called before the first frame update
         void Start()
@@ -22,8 +24,17 @@ namespace Minigames.SwordAndPistol.Scripts
             shatteredObject.SetActive(false);
         }
 
-        public void IsShot()
+        private void OnEnable()
         {
+            isExplode = false;
+        }
+
+        private void IsShot()
+        {
+            if(isExplode) return;
+
+            isExplode = true;
+            
             Destroy(mainCube);
             shatteredObject.SetActive(true);
             var shatterAnimation = shatteredObject.GetComponent<Animation>();

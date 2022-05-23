@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: MiniGameCollection
   m_EditorClassIdentifier: 
   miniGames:
+  - miniGameType: 0
+    SceneFolderPath: 
+    SceneName: HomeScene
   - miniGameType: 1
     SceneFolderPath: SwordAndPistol/Scenes/
     SceneName: SwordAndPistolScene
