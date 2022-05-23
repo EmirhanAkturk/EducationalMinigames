@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Minigames/SwordAndPistol/Scenes/LobbyScene.unity
     guid: c31e1de002b648041bbe01d575ea9f9b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Minigames/SwordAndPistol/Scenes/SwordAndPistolScene.unity
     guid: 8b0418fd49eb1d24fa8f70f9bf0642dd
   - enabled: 1
