@@ -86,7 +86,7 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     {
         //InHand Layer
         isBeingHeld = true;
-        gameObject.layer = 12;
+        gameObject.layer = 8;
     }
 
     [PunRPC]
