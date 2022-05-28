@@ -34,6 +34,11 @@ namespace Minigames.SwordAndPistol.Scripts
         {
             if(isExplode) return;
 
+            if (TryGetComponent<Collider>(out var collider))
+            {
+                collider.enabled = false;
+            }
+            
             isExplode = true;
             
             Destroy(mainCube);
@@ -57,7 +62,5 @@ namespace Minigames.SwordAndPistol.Scripts
                 IsShot();
             }
         }
-
-
     }
 }
