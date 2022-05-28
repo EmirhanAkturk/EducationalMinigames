@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using lib.GameDepends.Enums;
 using TMPro;
 using UnityEngine;
 

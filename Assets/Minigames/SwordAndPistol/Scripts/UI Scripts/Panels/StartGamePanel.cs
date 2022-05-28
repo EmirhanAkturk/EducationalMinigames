@@ -1,9 +1,11 @@
 using System;
+using Minigames.SwordAndPistol.Scripts.Managers;
 using Photon.Pun.Demo.PunBasics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using GameManager = Minigames.SwordAndPistol.Scripts.Managers.GameManager;
 
 namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 {
@@ -12,7 +14,10 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
         
         [Header("Buttons")] 
         [SerializeField] private Button startButton; 
-        [SerializeField] private Button returnLobbyButton; 
+        [SerializeField] private Button returnLobbyButton;
+
+        [Header("Texts")]
+        [SerializeField] private TextMeshProUGUI highScoreText;
         
         public void SetPanelState(bool isShow)
         {
@@ -21,9 +26,10 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         public void ShowPanel(Vector3 targetPos)
         {
-            SetPanelState(true);
+            highScoreText.text = ScoreManager.Instance.HighScore.ToString();
             transform.rotation = Quaternion.Euler(Vector3.zero);
             transform.position = targetPos;
+            SetPanelState(true);
         }
 
         private void OnEnable()
@@ -40,7 +46,7 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         private void OnStartGame()
         {
-            EventService.OnGameStart.Invoke(MiniGameManager.Instance.ActiveMiniGameType);
+            GameManager.OnGameStart.Invoke(MiniGameManager.Instance.ActiveMiniGameType);
         }
 
         private void OnBackToLobby()

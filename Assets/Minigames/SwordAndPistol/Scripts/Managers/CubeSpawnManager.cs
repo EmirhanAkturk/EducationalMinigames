@@ -12,7 +12,7 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
         
         private int index;
         private int indexcube;
-        public bool CanSpawnCube { private get; set; } = false;
+        public bool CanSpawnCube => GameManager.Instance.IsPlaying;
 
         // private void OnEnable()
         // {
@@ -37,7 +37,7 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
                 {
                     index = Random.Range(0, 4);
                     indexcube = Random.Range(0, 2);
-                    GameObject cube = Instantiate(Cubeprefabs[indexcube], Spawnpoints[index].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                    GameObject cube = Instantiate(Cubeprefabs[indexcube], Spawnpoints[index].transform.position, Quaternion.Euler(0, 0, 0));
                     cube.transform.SetParent(transform);
                 }
 

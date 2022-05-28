@@ -1,6 +1,9 @@
-public enum MiniGameType
+namespace lib.GameDepends.Enums
 {
-    UNDEFINED = 999,
-    HomeScene = 0,
-    SwordAndPistol = 1,
+    public enum MiniGameType
+    {
+        UNDEFINED = 999,
+        HomeScene = 0,
+        SwordAndPistol = 1,
+    }
 }

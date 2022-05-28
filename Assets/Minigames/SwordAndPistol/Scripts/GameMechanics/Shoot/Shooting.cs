@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Minigames.SwordAndPistol.Scripts.Managers;
+using UnityEngine;
 
-namespace Minigames.SwordAndPistol.Scripts
+namespace Minigames.SwordAndPistol.Scripts.GameMechanics.Shoot
 {
     public class Shooting : MonoBehaviour
     {
@@ -28,7 +29,7 @@ namespace Minigames.SwordAndPistol.Scripts
 
             if (/*Input.GetMouseButtonDown(0) ||*/ OVRInput.GetDown(shootingButton))
             {
-                if (elapsedTime > fireRate)
+                if (elapsedTime > fireRate && GameManager.Instance.IsPlaying)
                 {
                     Shoot();
                     elapsedTime = 0;

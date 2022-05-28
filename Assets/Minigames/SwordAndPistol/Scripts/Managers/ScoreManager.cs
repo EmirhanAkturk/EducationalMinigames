@@ -1,17 +1,30 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Minigames.SwordAndPistol.Scripts
+namespace Minigames.SwordAndPistol.Scripts.Managers
 {
     public class ScoreManager : Singleton<ScoreManager>
     {
-        public int currentScore; 
-        public int highScore;
-
+        public UnityEvent<int> OnScoreChanged = new UnityEvent<int>();
+        
+        public int HighScore
+        {
+            get => PlayerPrefs.GetInt("HighScore", 0);
+            private set => PlayerPrefs.SetInt("HighScore", value);
+        }
+        
+        public int CurrentScore
+        {
+            get => PlayerPrefs.GetInt("CurrentScore", 0);
+            private set => PlayerPrefs.SetInt("CurrentScore", value);
+        }
+        
         [Header("UI Fields")]
-        [SerializeField] private  TextMeshProUGUI hightScoreText;
-        [SerializeField] private  TextMeshProUGUI currentScoreText;
-        [SerializeField] private  TextMeshProUGUI finalScoreText;
+        [SerializeField] private TextMeshProUGUI currentScoreText;
+        [SerializeField] private TextMeshProUGUI finalScoreText;
+        
+        private int currentScore; 
 
         // Start is called before the first frame update
         private void Start()
@@ -21,31 +34,28 @@ namespace Minigames.SwordAndPistol.Scripts
 
         private void InitializeTexts()
         {
-            highScore = PlayerPrefs.GetInt("HighScore", 0);
-            hightScoreText.text = highScore.ToString();
-
             //Set the current score as 0.
             currentScoreText.text = "0";
         }
 
-
         public void AddScore(int scorePoint)
         {
-            currentScore = currentScore + scorePoint;
-            PlayerPrefs.SetInt("CurrentScore",currentScore);
+            currentScore += scorePoint;
 
+            CurrentScore = currentScore;
+            
             //Display the current score in UI
             currentScoreText.text = currentScore.ToString();
 
             //Also, update the final score
             finalScoreText.text = currentScore.ToString();
 
-            if (currentScore > PlayerPrefs.GetInt("HighScore",0))
+            if (currentScore > HighScore)
             {
-                PlayerPrefs.SetInt("HighScore",currentScore);
-                hightScoreText.text = currentScore.ToString();
-
+                HighScore = currentScore;
             }
+            
+            OnScoreChanged.Invoke(currentScore);
         }
     }
 }

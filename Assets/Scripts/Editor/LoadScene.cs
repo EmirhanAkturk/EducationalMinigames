@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using lib.GameDepends.Enums;
 
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;

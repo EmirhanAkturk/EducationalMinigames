@@ -1,4 +1,5 @@
 ﻿using System;
+using Minigames.SwordAndPistol.Scripts.Managers;
 using UnityEngine;
 
 namespace Minigames.SwordAndPistol.Scripts

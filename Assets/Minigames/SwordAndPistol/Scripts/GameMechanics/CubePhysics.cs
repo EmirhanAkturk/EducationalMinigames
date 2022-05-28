@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using lib.GameDepends.Enums;
+using Minigames.SwordAndPistol.Scripts.Managers;
+using UnityEngine;
 
 namespace Minigames.SwordAndPistol.Scripts
 {
@@ -8,7 +11,24 @@ namespace Minigames.SwordAndPistol.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(0,0,force),ForceMode.Acceleration);
+            var rb = GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(0,0,force),ForceMode.Acceleration);
+        }
+
+        private void OnEnable()
+        {
+            GameManager.OnGameOver.AddListener(DestroyCube);
+        }
+        
+        private void OnDisable()
+        {
+            GameManager.OnGameOver.RemoveListener(DestroyCube);
+        }
+
+        private void DestroyCube(MiniGameType miniGameType)
+        {
+            if(miniGameType != GameManager.CURRENT_MINI_GAME_TYPE) return;
+            Destroy(gameObject);
         }
     }
 }

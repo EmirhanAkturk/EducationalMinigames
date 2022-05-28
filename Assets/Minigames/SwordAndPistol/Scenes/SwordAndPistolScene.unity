@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 75154939}
   - component: {fileID: 75154938}
   - component: {fileID: 75154937}
+  - component: {fileID: 75154936}
   m_Layer: 5
   m_Name: UI_ScoreCurrent
   m_TagString: Untagged
@@ -291,6 +292,19 @@ RectTransform:
   m_AnchoredPosition: {x: -5.17, y: 1.4299998}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &75154936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75154934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15078db397ce46349a46501c37bd7e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreText: {fileID: 448433545}
 --- !u!114 &75154937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,9 +891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8d22193f07db947bbee85a3a97966e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 0
-  highScore: 0
-  hightScoreText: {fileID: 1721821175}
+  OnScoreChanged:
+    m_PersistentCalls:
+      m_Calls: []
   currentScoreText: {fileID: 448433545}
   finalScoreText: {fileID: 1409727138}
 --- !u!4 &529705811
@@ -1135,6 +1149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartButton: {fileID: 1753229806}
   returnLobbyButton: {fileID: 1787797051}
+  highScoreText: {fileID: 1721821175}
+  finalScoreText: {fileID: 1409727138}
 --- !u!1001 &558007346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1550,6 +1566,10 @@ PrefabInstance:
     - target: {fileID: 3099127920940236361, guid: 99930b2561abfaa4cae77974a386e703, type: 3}
       propertyPath: m_Name
       value: GunWithShooting
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099127920940236361, guid: 99930b2561abfaa4cae77974a386e703, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99930b2561abfaa4cae77974a386e703, type: 3}
@@ -2493,6 +2513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 532136184}
   returnLobbyButton: {fileID: 1246848617}
+  highScoreText: {fileID: 2141157483}
 --- !u!1 &1005023590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRControllerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3270,7 +3295,7 @@ GameObject:
   - component: {fileID: 1301489295}
   - component: {fileID: 1301489296}
   m_Layer: 0
-  m_Name: GameSceneManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3305,7 +3330,6 @@ MonoBehaviour:
   timeText: {fileID: 1846573721}
   progressBarImage: {fileID: 1259635496}
   timerUI_Gameobject: {fileID: 1240951553}
-  currentScoreUI: {fileID: 75154934}
 --- !u!1 &1303733962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,6 +3762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIHelpers
       objectReference: {fileID: 0}
+    - target: {fileID: 1732808951507650, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4802744215004400, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.23
@@ -4067,6 +4095,10 @@ PrefabInstance:
     - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_Name
       value: OVRControllerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_RootOrder
@@ -5269,7 +5301,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b164a0c5f04e6844a3a67f8dd5ef115, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

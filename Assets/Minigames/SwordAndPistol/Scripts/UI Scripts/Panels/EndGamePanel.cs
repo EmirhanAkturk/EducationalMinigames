@@ -1,10 +1,12 @@
 using System;
+using Minigames.SwordAndPistol.Scripts.Managers;
 using Photon.Pun.Demo.PunBasics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using GameManager = Minigames.SwordAndPistol.Scripts.Managers.GameManager;
 
 namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 {
@@ -13,6 +15,10 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
         [Header("Buttons")] 
         [SerializeField] private Button restartButton; 
         [SerializeField] private Button returnLobbyButton;
+
+        [Header("Texts")] 
+        [SerializeField] private TextMeshProUGUI highScoreText;
+        [SerializeField] private TextMeshProUGUI finalScoreText;
 
         #region Photon Callbacks
 
@@ -35,9 +41,11 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         public void ShowPanel(Vector3 targetPos)
         {
+            highScoreText.text = ScoreManager.Instance.HighScore.ToString();
+            finalScoreText.text = ScoreManager.Instance.CurrentScore.ToString();
+            transform.rotation = Quaternion.Euler(Vector3.zero);
+            transform.position = targetPos;
             SetPanelState(true);
-            gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
-            gameObject.transform.position = targetPos;
         }
 
         public override void OnEnable()
