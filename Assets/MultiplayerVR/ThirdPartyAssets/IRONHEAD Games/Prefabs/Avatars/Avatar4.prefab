@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 2460175537207679341}
   - component: {fileID: 2039198042372870110}
   - component: {fileID: 4854161512565674805}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 8649215886880382321}
   - component: {fileID: 6278278715137083764}
   - component: {fileID: 8556090280678887424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hair4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 4575591258581295829}
   - component: {fileID: 8543033646106753749}
   - component: {fileID: 6808244254802488867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
