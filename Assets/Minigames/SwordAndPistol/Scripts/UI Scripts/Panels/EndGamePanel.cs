@@ -10,7 +10,7 @@ using GameManager = Minigames.SwordAndPistol.Scripts.Managers.GameManager;
 
 namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 {
-    public class EndGamePanel : MonoBehaviourPunCallbacks
+    public class EndGamePanel : MonoBehaviour /*MonoBehaviourPunCallbacks*/
     {
         [Header("Buttons")] 
         [SerializeField] private Button restartButton; 
@@ -22,15 +22,15 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         #region Photon Callbacks
 
-        public override void OnLeftRoom()
-        {
-            PhotonNetwork.Disconnect();
-        }
-
-        public override void OnDisconnected(DisconnectCause cause)
-        {
-            MiniGameManager.Instance.LoadHomeScene();
-        }
+        // public override void OnLeftRoom()
+        // {
+        //     PhotonNetwork.Disconnect();
+        // }
+        //
+        // public override void OnDisconnected(DisconnectCause cause)
+        // {
+        //     MiniGameManager.Instance.LoadHomeScene();
+        // }
 
         #endregion
         
@@ -48,16 +48,16 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
             SetPanelState(true);
         }
 
-        public override void OnEnable()
+        public /*override*/ void OnEnable()
         {
-            base.OnEnable();
+            // base.OnEnable();
             restartButton.onClick.AddListener(OnRestartGame);
             returnLobbyButton.onClick.AddListener(OnBackToLobby);
         }
 
-        public override void OnDisable()
+        public /*override*/ void OnDisable()
         {
-            base.OnDisable();
+            // base.OnDisable();
             restartButton.onClick.RemoveListener(OnRestartGame);
             returnLobbyButton.onClick.RemoveListener(OnBackToLobby);
         }
@@ -69,7 +69,9 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         private void OnBackToLobby()
         {
-            PhotonNetwork.LeaveRoom();
+            MiniGameManager.Instance.LoadHomeScene();
+
+            // PhotonNetwork.LeaveRoom();
         }
 
         // public void OnButton1Clicked()

@@ -51,7 +51,7 @@ namespace Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels
 
         private void OnBackToLobby()
         {
-            
+            MiniGameManager.Instance.LoadHomeScene();
         }
     }
 }
