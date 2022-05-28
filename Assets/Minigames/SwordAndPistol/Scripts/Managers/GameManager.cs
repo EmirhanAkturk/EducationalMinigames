@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using lib.GameDepends.Enums;
 using Minigames.SwordAndPistol.Scripts.UI_Scripts.Panels;
 using TMPro;
@@ -17,6 +18,8 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
         
         public const MiniGameType CURRENT_MINI_GAME_TYPE = MiniGameType.SwordAndPistol;
 
+        
+        public DifficultyType CurrentDifficultyType { get; private set; }
         public bool IsPlaying { get; private set; }
         
         [Header("UI")]
@@ -42,6 +45,21 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
         //Audio related
         private float audioClipLength;
         private float timeToStartGame = 5.0f;
+
+
+        #region Difficulty
+
+        public void SetDifficulty(DifficultyType difficultyType)
+        {
+            CurrentDifficultyType = difficultyType;
+        }
+
+        public float GetCurrentSpawnPeriod()
+        {
+            return DifficultyService.GetDifficultySpawnPeriod(CurrentDifficultyType);
+        }
+
+        #endregion
 
         private void OnEnable()
         {
@@ -147,5 +165,26 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
             GameplayPanel.SetPanelState(false);
             timerUI_Gameobject.gameObject.SetActive(false);
         }
+    }
+}
+
+public enum DifficultyType
+{
+    Easy = 0,
+    Normal = 1,
+    Hard = 2,
+}
+
+public class Difficulty
+{
+    public DifficultyType Type { get; private set; }
+    public string Name{ get; private set; }
+    public float CubeSpawnPeriod{ get; private set; }
+
+    public Difficulty(DifficultyType type, string name, float cubeSpawnPeriod)
+    {
+        Type = type;
+        Name = name;
+        CubeSpawnPeriod = cubeSpawnPeriod;
     }
 }

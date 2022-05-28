@@ -8,8 +8,9 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
     {
         [SerializeField] private GameObject[] Spawnpoints;
         [SerializeField] private GameObject[] Cubeprefabs;
-        [SerializeField] private float timeRate;
-        
+        // [SerializeField] private float timeRate;
+
+        private float CubeSpawnPeriod => GameManager.Instance.GetCurrentSpawnPeriod();
         private int index;
         private int indexcube;
         public bool CanSpawnCube => GameManager.Instance.IsPlaying;
@@ -41,7 +42,7 @@ namespace Minigames.SwordAndPistol.Scripts.Managers
                     cube.transform.SetParent(transform);
                 }
 
-                yield return new WaitForSeconds(timeRate);
+                yield return new WaitForSeconds(CubeSpawnPeriod);
             }
         }
 
