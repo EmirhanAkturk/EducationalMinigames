@@ -16,6 +16,7 @@ namespace Minigames.SwordAndPistol.Scripts
         [SerializeField] private Material greenMat;
 
         [SerializeField] private GameObject timeCountDownCanvas;
+        [SerializeField] private TextMeshProUGUI titleText;
         [SerializeField] private TextMeshProUGUI timeText;
 
         [SerializeField] private float smooth = 0.1f;
@@ -27,7 +28,7 @@ namespace Minigames.SwordAndPistol.Scripts
             // Start with button up top / popped up
             var localPos = transform.localPosition;
             transform.localPosition = new Vector3(localPos.x, maxLocalY, localPos.z);
-            timeCountDownCanvas.SetActive(false);
+            //timeCountDownCanvas.SetActive(false);
         }
 
         private void Update()
@@ -70,6 +71,7 @@ namespace Minigames.SwordAndPistol.Scripts
         private IEnumerator StartGame(float countDownValue)
         {
             timeText.text = countDownValue.ToString();
+            titleText.text = "Game Starts In";
             timeCountDownCanvas.SetActive(true);
             
             while (countDownValue > 0)
