@@ -25,6 +25,7 @@ public enum PoolType
 
 	//Props
 	Bullet = 901,
+	NerfBullet = 902,
 
 	//Other
 	Empty = 1001,

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 247442334}
   - component: {fileID: 247442335}
   - component: {fileID: 247442336}
+  - component: {fileID: 5070656752869642514}
   m_Layer: 0
   m_Name: NerfGun
   m_TagString: Untagged
@@ -34,7 +35,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.481, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3708313121106551750}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,8 +116,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07374483, y: 0.31025645, z: 0.4355548}
-  m_Center: {x: 0.000037640333, y: 0.0066286325, z: 0.13272184}
+  m_Size: {x: 0.07374483, y: 0.31025645, z: 0.39975938}
+  m_Center: {x: 0.000037640333, y: 0.0066286325, z: 0.11482413}
 --- !u!114 &247442332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
 --- !u!114 &247442334
 MonoBehaviour:
@@ -307,3 +309,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c51bed9b439b4a8b6328a505531a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5070656752869642514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117200102568480129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a0776d1a80df24fb2bd2d5a5f51dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunShooterLeftAction: {fileID: -7093652634317047758, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gunShooterRightAction: {fileID: 6592744674107706411, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bulletType: 902
+  nozzleTransform: {fileID: 3708313121106551750}
+  gunAnimator: {fileID: 0}
+  fireRate: 0.1
+--- !u!1 &4837376270230810496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3708313121106551750}
+  m_Layer: 0
+  m_Name: Nuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3708313121106551750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837376270230810496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1043, z: 0.398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3114968798475927442}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

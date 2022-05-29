@@ -2169,6 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003a595e44b5dd441b2719c50f68f15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHomeUI: 0
   UIController: {fileID: 134290992669262484}
   BaseController: {fileID: 134290993257174015}
   inputActionReference_UISwitcher: {fileID: -8896845420412287031, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -2183,7 +2184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 134290993257174014}
   - component: {fileID: 134290993257174003}
-  - component: {fileID: 134290993257174013}
   - component: {fileID: 1887838387861894581}
   - component: {fileID: 6504689356951233396}
   - component: {fileID: 4933398671627364824}
@@ -2374,19 +2374,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
---- !u!135 &134290993257174013
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134290993257174015}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1887838387861894581
 MonoBehaviour:
   m_ObjectHideFlags: 0

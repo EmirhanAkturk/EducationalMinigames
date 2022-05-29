@@ -40,5 +40,8 @@ MonoBehaviour:
     - Type: 901
       Path: Bullet
       Count: 0
+    - Type: 902
+      Path: NerfBullet
+      Count: 0
   DefaultCount: 0
   ExtendMethod: 0
