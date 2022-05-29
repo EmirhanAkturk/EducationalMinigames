@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
 {
-    PhotonView m_photonView;
-    Rigidbody rb;
-    bool isBeingHeld = false;
+    public bool IsBeingHeld { get; private set; } = false;
+    
+    private PhotonView m_photonView;
+    private XRGrabInteractable xrGrabInteractable;
+    private Rigidbody rb;
+    
+    
     private void Awake()
     {
         m_photonView = GetComponent<PhotonView>();
+        xrGrabInteractable = GetComponent<XRGrabInteractable>();
     }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +29,7 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     // Update is called once per frame
     void Update()
     {
-        if (isBeingHeld)
+        if (IsBeingHeld)
         {
             //Object is being grabbed
             rb.isKinematic = true;
@@ -85,7 +92,8 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     public void StartNetworkGrabbing()
     {
         //InHand Layer
-        isBeingHeld = true;
+        IsBeingHeld = true;
+        // xrGrabInteractable.interactionLayers = InteractionLayerMask.GetMask("InHand");
         gameObject.layer = LayerMask.NameToLayer("InHand");
     }
 
@@ -93,7 +101,8 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     public void StopNetworkGrabbing()
     {
         //Interactable layer
-        isBeingHeld = false;
+        IsBeingHeld = false;
+        // xrGrabInteractable.interactionLayers = InteractionLayerMask.GetMask("Interactable");
         gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 }
