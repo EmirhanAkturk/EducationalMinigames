@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8642494453420527241}
   - component: {fileID: 768787692575339711}
   - component: {fileID: 6455841063015729222}
-  - component: {fileID: 131008883855311349}
+  - component: {fileID: 8097302676577321437}
   m_Layer: 0
   m_Name: BaasketBoard
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &131008883855311349
-MeshCollider:
+--- !u!65 &8097302676577321437
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,10 +94,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5877407533597131124, guid: 313f67f27665094409bc6dbea2291f37, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.9990766, y: 2.2638254, z: 0.24827646}
+  m_Center: {x: 0, y: 1.1766729, z: -0.09665454}
 --- !u!1 &5701816519654794847
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +189,7 @@ GameObject:
   - component: {fileID: 2265775624784790636}
   - component: {fileID: 6220197755020722215}
   - component: {fileID: 114425056197327684}
+  - component: {fileID: 1911645922092350012}
   m_Layer: 0
   m_Name: BasketBoardHoop
   m_TagString: Untagged
@@ -260,3 +260,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1911645922092350012
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800557131373844713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8702783976292295636, guid: 313f67f27665094409bc6dbea2291f37, type: 3}

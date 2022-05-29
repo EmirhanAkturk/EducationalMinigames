@@ -86,7 +86,7 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     {
         //InHand Layer
         isBeingHeld = true;
-        gameObject.layer = 8;
+        gameObject.layer = LayerMask.NameToLayer("InHand");
     }
 
     [PunRPC]
@@ -94,6 +94,6 @@ public class NetworkingGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallba
     {
         //Interactable layer
         isBeingHeld = false;
-        gameObject.layer = 0;
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 }

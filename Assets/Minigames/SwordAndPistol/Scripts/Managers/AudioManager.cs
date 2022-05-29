@@ -10,6 +10,9 @@ namespace Minigames.SwordAndPistol.Scripts
         [SerializeField] private AudioSource musicTheme;
         [SerializeField] private AudioSource sliceSound;
         [SerializeField] private AudioSource gunSound;
+        [SerializeField] private AudioSource pinponSound;
+        [SerializeField] private AudioSource basketballSound;
+
 
         private Dictionary<AudioType, AudioSource> audiosDictionary;
 
@@ -21,6 +24,8 @@ namespace Minigames.SwordAndPistol.Scripts
                 {AudioType.MusicTheme, musicTheme},
                 {AudioType.SliceSound, sliceSound},
                 {AudioType.GunSound, gunSound},
+                {AudioType.PinponSound, pinponSound},
+                {AudioType.BasketballSound, basketballSound},
             };
         }
 
@@ -91,6 +96,8 @@ namespace Minigames.SwordAndPistol.Scripts
         MusicTheme = 1,
         SliceSound = 2,
         GunSound = 3,
+        PinponSound = 4,
+        BasketballSound = 5,
     }
 }
 
