@@ -5,7 +5,7 @@ using Minigames.SwordAndPistol.Scripts;
 public class BasketballController : MonoBehaviour
 {
     private float lastPlayTime;
-    private float soundPlayPeriod = 1f;
+    private float soundPlayPeriod = 0.2f;
 
     private void OnCollisionEnter(Collision collision)
     {
