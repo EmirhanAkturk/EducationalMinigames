@@ -12,7 +12,7 @@ public class LoadScene : Editor
     [MenuItem("LoadScene/Init", priority = 0)]
     private static void Init()
     {
-        EditorSceneManager.OpenScene("Assets/Minigames/SwordAndPistol/Scenes/LobbyScene.unity");
+        EditorSceneManager.OpenScene("Assets/MultiplayerVR/ThirdPartyAssets/IRONHEAD Games/Scenes/LoginScene.unity");
         // EditorSceneManager.OpenScene("Assets/Scenes/InitScene.unity");
     }
 
