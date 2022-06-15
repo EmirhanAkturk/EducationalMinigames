@@ -8309,7 +8309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764127074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -27.59, y: 6.48, z: -16.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1378787573}
@@ -8328,7 +8328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genericVRPlayerPrefab: {fileID: 134290992715231778, guid: c968359d2c3fc7b489edffa83d9a480e, type: 3}
-  spawnPosition: {x: -15, y: 0, z: -22}
+  spawnPosition: {x: -27.59, y: 6.5, z: -16.2}
 --- !u!4 &769447460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8938639886210421350, guid: f0662d655d41ee74383aa11d28d35927, type: 3}
